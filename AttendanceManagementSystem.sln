@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31825.309
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceManagementSystem", "DoAnLapTrinhA\AttendanceManagementSystem.csproj", "{3DFDB87A-C8F9-42FD-B714-AE76E26A3ACE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceManagementSystem", "AttendanceManagementSystem\AttendanceManagementSystem.csproj", "{3DFDB87A-C8F9-42FD-B714-AE76E26A3ACE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
