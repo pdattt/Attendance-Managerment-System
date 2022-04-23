@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AttendanceManagementSystem
 {
     [FirestoreData]
-    internal class User
+    public class User
     {
         [FirestoreProperty]
         public string Name { get; set; }

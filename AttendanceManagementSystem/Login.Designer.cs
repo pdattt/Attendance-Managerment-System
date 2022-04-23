@@ -68,7 +68,7 @@
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(165, 20);
             this.txtPassWord.TabIndex = 3;
-            this.txtPassWord.TextChanged += new System.EventHandler(this.txtPassWord_TextChanged);
+            this.txtPassWord.TextChanged += new System.EventHandler(this.txtPwd_TextChanged);
             // 
             // label3
             // 
@@ -113,7 +113,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

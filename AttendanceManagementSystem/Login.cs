@@ -1,4 +1,6 @@
-﻿using Google.Cloud.Firestore;
+﻿using DoAnLapTrinhA.BUS;
+using DoAnLapTrinhA.DTO;
+using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +15,12 @@ namespace AttendanceManagementSystem
 {
     public partial class Login : Form
     {
-        FirestoreDb db;
         public Login()
         {
             InitializeComponent();
         }
-        private void Login_Load(object sender, EventArgs e)
-        {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"attendancerfid.json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            db = FirestoreDb.Create("attendancerfid-a6f84");
-        }
-
-        private void txtPassWord_TextChanged(object sender, EventArgs e)
+        private void txtPwd_TextChanged(object sender, EventArgs e)
         {
             txtPassWord.PasswordChar = '*';
         }
@@ -43,34 +37,30 @@ namespace AttendanceManagementSystem
             CheckAccount();
         }
 
-        async void CheckAccount()
+        public async void CheckAccount()
         {
-            Query qref = db.Collection("User");
-            QuerySnapshot snap = await qref.GetSnapshotAsync();
+            UserLogin userLogin = new UserLogin(txtAccount.Text, txtPassWord.Text);
+            string check = await new UserBUS().CheckAccount(userLogin);
 
-            foreach (DocumentSnapshot docsnap in snap)
+            switch (check)
             {
-                User user = docsnap.ConvertTo<User>();
-                if (docsnap.Exists)
-                {
-                    if (txtAccount.Text == user.Email)
+                case "SUCCESS":
                     {
-                        if (txtPassWord.Text == user.Password)
-                        {
-                            this.Hide();
-                            Form1 form1 = new Form1();
-                            form1.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Mật Khẩu Không Đúng");
-                        }
+                        this.Hide();
+                        Form1 form1 = new Form1();
+                        form1.Show();
+                        break;
                     }
-                    else
+                case "WRONG PASSWORD": 
+                    {
+                        MessageBox.Show("Mật Khẩu Không Đúng");
+                        break; 
+                    }
+                default: 
                     {
                         MessageBox.Show("Tài Khoản Không Tồn Tại");
+                        break; 
                     }
-                }
             }
         }
 
