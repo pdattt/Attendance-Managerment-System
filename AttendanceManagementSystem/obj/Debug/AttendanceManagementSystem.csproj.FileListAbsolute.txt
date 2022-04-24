@@ -154,7 +154,6 @@ C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagem
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.AssemblyReference.cache
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Login.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Register.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.GenerateResource.cache
@@ -252,3 +251,4 @@ C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagem
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.exe
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.MainForm.resources
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AttendeeForm.resources
