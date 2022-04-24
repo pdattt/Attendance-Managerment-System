@@ -133,6 +133,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AttendeeBUS.cs" />
     <Compile Include="DAO\AttendeeDAO.cs" />
     <Compile Include="Form\AttendeeForm.cs">
       <SubType>Form</SubType>
