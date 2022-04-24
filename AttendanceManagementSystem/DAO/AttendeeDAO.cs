@@ -35,5 +35,21 @@ namespace DoAnLapTrinhA.DAO
             }
             return listAttendee;
         }
+
+        public async ValueTask<Attendee> GetByID(int id)
+        {
+            Query qref = db.Collection("Attendee");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Attendee attendee = docsnap.ConvertTo<Attendee>();
+                if (attendee.AttendeeID == id)
+                {
+                    return attendee;
+                }
+            }
+            return null;
+        }
     }
 }
