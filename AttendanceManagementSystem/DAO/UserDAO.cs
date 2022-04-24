@@ -36,5 +36,19 @@ namespace DoAnLapTrinhA.DAO
             }
             return listUser;
         }
+
+        public void AddNew(UserRegister newUser)
+        {
+            CollectionReference coll = db.Collection("User");
+
+            Dictionary<string, object> map = new Dictionary<string, object>()
+            {
+                {"Name", newUser.Name},
+                {"Email", newUser.Email},
+                {"Password", newUser.Password},
+            };
+
+            coll.AddAsync(map);
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Google.Cloud.Firestore;
+﻿using DoAnLapTrinhA.BUS;
+using DoAnLapTrinhA.DTO;
+using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +15,6 @@ namespace AttendanceManagementSystem
 {
     public partial class Register : Form
     {
-        FirestoreDb database;
         public Register()
         {
             InitializeComponent();
@@ -26,47 +27,38 @@ namespace AttendanceManagementSystem
             login.Show();
         }
 
-        private void Register_Load(object sender, EventArgs e)
+        private async void btnRegist_Click(object sender, EventArgs e)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"attendancerfid.json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
-
-            database = FirestoreDb.Create("attendancerfid-a6f84");
-        }
-
-        void addAccount()
-        {
-            if(txtCheckPw.Text == txtpPw.Text)
+            if (txtConfirmPwd.Text == txtpPwd.Text)
             {
-                CollectionReference coll = database.Collection("User");
-                Dictionary<string, object> map = new Dictionary<string, object>()
-            {
-                {"Name", txtName.Text},
-                {"Email", txtEmail.Text},
-                {"Password", txtpPw.Text},
-            };
-                coll.AddAsync(map);
-                MessageBox.Show("Tài Khoản Đã Tạo Thành Công");
+                UserRegister newUser = new UserRegister(txtName.Text, txtEmail.Text, txtpPwd.Text);
+                bool result = await new UserBUS().AddNewUser(newUser);
+
+                if (result)
+                {
+                    MessageBox.Show("Tạo tài khoản thành công!");
+
+                    this.Hide();
+                    Login login = new Login();
+                    login.Show();
+                }
+                else
+                    MessageBox.Show("Tài khoản đã tồn tại!");
             }
             else
             {
-                MessageBox.Show("Mật Khẩu Không Đúng, Kiểm Tra Lại");
+                MessageBox.Show("Mật khẩu xác nhận không trùng!");
             }
-        }
-
-        private void btnRegist_Click(object sender, EventArgs e)
-        {
-            addAccount();
         }
 
         private void txtpPw_TextChanged(object sender, EventArgs e)
         {
-            txtpPw.PasswordChar = '*';
+            txtpPwd.PasswordChar = '*';
         }
 
         private void txtCheckPw_TextChanged(object sender, EventArgs e)
         {
-            txtCheckPw.PasswordChar = '*';
+            txtConfirmPwd.PasswordChar = '*';
         }
     }
 }

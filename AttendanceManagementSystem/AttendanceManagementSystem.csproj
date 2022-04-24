@@ -137,6 +137,8 @@
     <Compile Include="DAO\StudentDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DTO\UserLogin.cs" />
+    <Compile Include="DTO\UserRegister.cs" />
+    <Compile Include="Encryption\EncryptorMD5.cs" />
     <Compile Include="Form\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
