@@ -53,7 +53,6 @@
             this.grInfo.TabIndex = 0;
             this.grInfo.TabStop = false;
             this.grInfo.Text = "Thông Tin";
-            this.grInfo.Enter += new System.EventHandler(this.grInfo_Enter);
             // 
             // txtEmail
             // 
@@ -111,7 +110,6 @@
             this.btnCheck.TabIndex = 1;
             this.btnCheck.Text = "Check";
             this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // Form1
             // 
@@ -122,7 +120,6 @@
             this.Controls.Add(this.grInfo);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.grInfo.ResumeLayout(false);
             this.grInfo.PerformLayout();
             this.ResumeLayout(false);
