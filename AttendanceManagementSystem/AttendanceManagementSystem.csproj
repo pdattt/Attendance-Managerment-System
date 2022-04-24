@@ -167,6 +167,9 @@
     </Compile>
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\User.cs" />
+    <EmbeddedResource Include="Form\AttendeeForm.resx">
+      <DependentUpon>AttendeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
