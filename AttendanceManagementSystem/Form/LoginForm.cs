@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace AttendanceManagementSystem
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -27,9 +27,9 @@ namespace AttendanceManagementSystem
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Register regis = new Register();
+            RegisterForm register = new RegisterForm();
             this.Hide();
-            regis.Show();
+            register.Show();
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)

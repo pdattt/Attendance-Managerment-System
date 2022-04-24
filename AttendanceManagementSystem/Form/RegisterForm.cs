@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace AttendanceManagementSystem
 {
-    public partial class Register : Form
+    public partial class RegisterForm : Form
     {
-        public Register()
+        public RegisterForm()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace AttendanceManagementSystem
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login login = new Login();
+            LoginForm login = new LoginForm();
             login.Show();
         }
 
@@ -39,7 +39,7 @@ namespace AttendanceManagementSystem
                     MessageBox.Show("Tạo tài khoản thành công!");
 
                     this.Hide();
-                    Login login = new Login();
+                    LoginForm login = new LoginForm();
                     login.Show();
                 }
                 else
