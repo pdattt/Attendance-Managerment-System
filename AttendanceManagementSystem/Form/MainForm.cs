@@ -41,10 +41,10 @@ namespace AttendanceManagementSystem
 
             if (snap.Exists)
             {
-                Student student = snap.ConvertTo<Student>();
+                Attendee student = snap.ConvertTo<Attendee>();
                 txtName.Text = student.Name;
                 txtEmail.Text = student.Email;
-                txtId.Text = student.StudentID.ToString();
+                txtId.Text = student.AttendeeID.ToString();
             }
         }
 

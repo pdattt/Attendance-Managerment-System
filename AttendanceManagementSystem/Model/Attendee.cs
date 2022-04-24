@@ -8,11 +8,11 @@ using Google.Cloud.Firestore;
 namespace AttendanceManagementSystem
 {
     [FirestoreData]
-    public class Student
+    public class Attendee
     {
 
         [FirestoreProperty]
-        public int StudentID { get; set; }
+        public int AttendeeID { get; set; }
         [FirestoreProperty]
         public string Name { get; set; }
         [FirestoreProperty]
@@ -20,14 +20,18 @@ namespace AttendanceManagementSystem
         [FirestoreProperty]
         public string CardId { get; set; }
 
-        public Student() { }
+        [FirestoreProperty]
+        public string Role { get; set; }
 
-        public Student(int studentID, string name, string email, string cardId)
+        public Attendee() { }
+
+        public Attendee(int attendeeID, string name, string email, string cardId, string role)
         {
-            StudentID = studentID;
+            AttendeeID = attendeeID;
             Name = name;
             Email = email;
             CardId = cardId;
+            Role = role;
         }
     }
 }

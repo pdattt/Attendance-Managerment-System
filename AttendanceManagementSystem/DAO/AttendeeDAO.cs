@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoAnLapTrinhA.DAO
 {
-    class StudentDAO
+    class AttendeeDAO
     {
     }
 }
