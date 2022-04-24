@@ -11,11 +11,11 @@ using Google.Cloud.Firestore;
 
 namespace AttendanceManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
        
         FirestoreDb database;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             

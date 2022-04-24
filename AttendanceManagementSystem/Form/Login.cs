@@ -42,7 +42,7 @@ namespace AttendanceManagementSystem
                 case "SUCCESS":
                     {
                         this.Hide();
-                        Form1 form1 = new Form1();
+                        MainForm form1 = new MainForm();
                         form1.Show();
                         break;
                     }

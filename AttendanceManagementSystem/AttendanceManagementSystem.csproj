@@ -133,6 +133,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\AttendeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AttendeeForm.Designer.cs">
+      <DependentUpon>AttendeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUS\UserBUS.cs" />
     <Compile Include="DAO\StudentDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
