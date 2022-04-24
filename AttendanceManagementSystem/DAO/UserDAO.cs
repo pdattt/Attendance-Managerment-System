@@ -12,6 +12,7 @@ namespace DoAnLapTrinhA.DAO
     class UserDAO
     {
         FirestoreDb db;
+        List<User> listUser;
     
         public UserDAO()
         {
@@ -21,27 +22,19 @@ namespace DoAnLapTrinhA.DAO
             db = FirestoreDb.Create("attendancerfid-a6f84");
         }
 
-        public async ValueTask<string> CheckUser(UserLogin userLogin)
+        public async ValueTask<List<User>> GetAll()
         {
-            Query qref = db.Collection("User");
+            listUser = new List<User>();
 
+            Query qref = db.Collection("User");
             QuerySnapshot snap = await qref.GetSnapshotAsync();
 
             foreach (DocumentSnapshot docsnap in snap)
             {
                 User user = docsnap.ConvertTo<User>();
-                if (docsnap.Exists)
-                {
-                    if (userLogin.Email == user.Email)
-                    {
-                        if (userLogin.Password == user.Password)
-                            return "SUCCESS";                      
-                        return "WRONG PASSWORD";
-                    }
-
-                }
+                listUser.Add(user);
             }
-            return "USER IS NOT EXIST";
+            return listUser;
         }
     }
 }

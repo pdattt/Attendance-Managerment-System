@@ -1,4 +1,5 @@
-﻿using DoAnLapTrinhA.DAO;
+﻿using AttendanceManagementSystem;
+using DoAnLapTrinhA.DAO;
 using DoAnLapTrinhA.DTO;
 using System;
 using System.Collections.Generic;
@@ -10,15 +11,21 @@ namespace DoAnLapTrinhA.BUS
 {
     public class UserBUS
     {
-        public async Task<string> CheckAccount(UserLogin userLogin)
+        public async ValueTask<string> CheckAccount(UserLogin userLogin)
         {
-            string result = await new UserDAO().CheckUser(userLogin);
-            switch (result)
+            List<User> listUser = await new UserDAO().GetAll();
+
+            foreach(User user in listUser)
             {
-                case "SUCCESS": return "SUCCESS";
-                case "WRONG PASSWORD": return "WRONG PASSWORD";
-                default: return "USER IS NOT EXIST";
+                if (user.Email == userLogin.Email)
+                {
+                    if (user.Password == userLogin.Password)
+                        return "SUCCESS";
+                    else
+                        return "WRONG PASSWORD";
+                }
             }
+            return "USER IS NOT EXIST";
         }
     }
 }

@@ -32,12 +32,7 @@ namespace AttendanceManagementSystem
             regis.Show();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            CheckAccount();
-        }
-
-        public async void CheckAccount()
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             UserLogin userLogin = new UserLogin(txtAccount.Text, txtPassWord.Text);
             string check = await new UserBUS().CheckAccount(userLogin);
@@ -51,18 +46,17 @@ namespace AttendanceManagementSystem
                         form1.Show();
                         break;
                     }
-                case "WRONG PASSWORD": 
+                case "WRONG PASSWORD":
                     {
                         MessageBox.Show("Mật Khẩu Không Đúng");
-                        break; 
+                        break;
                     }
-                default: 
+                default:
                     {
                         MessageBox.Show("Tài Khoản Không Tồn Tại");
-                        break; 
+                        break;
                     }
             }
         }
-
     }
 }
