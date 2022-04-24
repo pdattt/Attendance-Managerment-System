@@ -167,6 +167,7 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
+    <Compile Include="ReadRFIDCard.cs" />
     <EmbeddedResource Include="Form\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
     </EmbeddedResource>
