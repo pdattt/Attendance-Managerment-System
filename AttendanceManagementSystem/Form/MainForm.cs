@@ -24,5 +24,12 @@ namespace AttendanceManagementSystem
             this.Hide();
             login.Show();
         }
+
+        private void btnAttendee_Click(object sender, EventArgs e)
+        {
+            AttendeeForm attendee = new AttendeeForm();
+            this.Hide();
+            attendee.Show();
+        }
     }
 }

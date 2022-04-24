@@ -16,5 +16,12 @@ namespace AttendanceManagementSystem
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainForm frm = new MainForm();
+            this.Hide();
+            frm.Show();
+        }
     }
 }

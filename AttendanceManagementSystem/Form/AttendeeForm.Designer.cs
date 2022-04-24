@@ -44,6 +44,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.gridCalendar = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).BeginInit();
             this.SuspendLayout();
@@ -181,11 +182,22 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "QUẢN LÝ NGƯỜI THAM DỰ";
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(28, 27);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 16;
+            this.btnBack.Text = "<-";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // AttendeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 651);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gridCalendar);
             this.Controls.Add(this.btnDelete);
@@ -229,5 +241,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView gridCalendar;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnBack;
     }
 }
