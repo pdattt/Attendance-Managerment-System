@@ -88,9 +88,6 @@ C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagem
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\libgrpc_csharp_ext.x64.so
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\libgrpc_csharp_ext.x64.dylib
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\attendancerfid.json
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\DoAnLapTrinhA.exe.config
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\DoAnLapTrinhA.exe
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\DoAnLapTrinhA.pdb
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\FireSharp.dll
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\FireSharp.Serialization.JsonNet.dll
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\Google.Api.CommonProtos.dll
@@ -160,13 +157,10 @@ C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagem
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.AssemblyReference.cache
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Form1.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Login.resources
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\DoAnLapTrinhA.Properties.Resources.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Register.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.GenerateResource.cache
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CoreCompileInputs.cache
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CopyComplete
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\DoAnLapTrinhA.exe
-C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\DoAnLapTrinhA.pdb
 C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem\bin\Debug\grpc_csharp_ext.x86.dll
 C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem\bin\Debug\grpc_csharp_ext.x64.dll
 C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem\bin\Debug\libgrpc_csharp_ext.x64.so
@@ -252,3 +246,9 @@ C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem
 C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.csproj.CopyComplete
 C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem\obj\Debug\DoAnLapTrinhA.exe
 C:\Đồ Án Lập Trình\Attendace Management System\AttendanceManagementSystem\obj\Debug\DoAnLapTrinhA.pdb
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.exe.config
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.exe
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\AttendanceManagementSystem.pdb
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.Properties.Resources.resources
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.exe
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
