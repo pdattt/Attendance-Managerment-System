@@ -59,6 +59,7 @@ namespace AttendanceManagementSystem
             txtDateEnd.Hide();
             txtDateStart.Hide();
             txtDateInWeek.Hide();
+            txtDate.Text = DateTime.Now.Date.ToShortDateString();
         }
 
         private void radioBtnClass_CheckedChanged(object sender, EventArgs e)
@@ -79,6 +80,7 @@ namespace AttendanceManagementSystem
             txtDateEnd.Show();
             txtDateStart.Show();
             txtDateInWeek.Show();
+            txtDate.Text = DateTime.Now.Date.ToShortDateString();
         }
     }
 }
