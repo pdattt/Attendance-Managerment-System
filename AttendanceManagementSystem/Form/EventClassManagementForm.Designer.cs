@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridEventClass = new System.Windows.Forms.DataGridView();
             this.radioBtnEvent = new System.Windows.Forms.RadioButton();
             this.radioBtnClass = new System.Windows.Forms.RadioButton();
             this.labelEvent = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.txtDateInWeek = new System.Windows.Forms.TextBox();
             this.labelClassID = new System.Windows.Forms.Label();
             this.labelClassName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEventClass)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -71,13 +71,13 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // dataGridView1
+            // gridEventClass
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(123, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1160, 283);
-            this.dataGridView1.TabIndex = 1;
+            this.gridEventClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEventClass.Location = new System.Drawing.Point(123, 101);
+            this.gridEventClass.Name = "gridEventClass";
+            this.gridEventClass.Size = new System.Drawing.Size(1160, 283);
+            this.gridEventClass.TabIndex = 1;
             // 
             // radioBtnEvent
             // 
@@ -138,7 +138,7 @@
             // labelEventID
             // 
             this.labelEventID.AutoSize = true;
-            this.labelEventID.Location = new System.Drawing.Point(195, 438);
+            this.labelEventID.Location = new System.Drawing.Point(192, 438);
             this.labelEventID.Name = "labelEventID";
             this.labelEventID.Size = new System.Drawing.Size(62, 13);
             this.labelEventID.TabIndex = 7;
@@ -147,7 +147,7 @@
             // labelEventName
             // 
             this.labelEventName.AutoSize = true;
-            this.labelEventName.Location = new System.Drawing.Point(195, 474);
+            this.labelEventName.Location = new System.Drawing.Point(192, 474);
             this.labelEventName.Name = "labelEventName";
             this.labelEventName.Size = new System.Drawing.Size(66, 13);
             this.labelEventName.TabIndex = 8;
@@ -183,7 +183,7 @@
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
-            this.labelEnd.Location = new System.Drawing.Point(660, 438);
+            this.labelEnd.Location = new System.Drawing.Point(744, 442);
             this.labelEnd.Name = "labelEnd";
             this.labelEnd.Size = new System.Drawing.Size(68, 13);
             this.labelEnd.TabIndex = 12;
@@ -192,7 +192,7 @@
             // labelDateStart
             // 
             this.labelDateStart.AutoSize = true;
-            this.labelDateStart.Location = new System.Drawing.Point(660, 474);
+            this.labelDateStart.Location = new System.Drawing.Point(744, 478);
             this.labelDateStart.Name = "labelDateStart";
             this.labelDateStart.Size = new System.Drawing.Size(75, 13);
             this.labelDateStart.TabIndex = 13;
@@ -201,7 +201,7 @@
             // labelDateEnd
             // 
             this.labelDateEnd.AutoSize = true;
-            this.labelDateEnd.Location = new System.Drawing.Point(660, 512);
+            this.labelDateEnd.Location = new System.Drawing.Point(744, 516);
             this.labelDateEnd.Name = "labelDateEnd";
             this.labelDateEnd.Size = new System.Drawing.Size(77, 13);
             this.labelDateEnd.TabIndex = 14;
@@ -210,7 +210,7 @@
             // labelDateInWeek
             // 
             this.labelDateInWeek.AutoSize = true;
-            this.labelDateInWeek.Location = new System.Drawing.Point(660, 547);
+            this.labelDateInWeek.Location = new System.Drawing.Point(744, 551);
             this.labelDateInWeek.Name = "labelDateInWeek";
             this.labelDateInWeek.Size = new System.Drawing.Size(86, 13);
             this.labelDateInWeek.TabIndex = 15;
@@ -218,7 +218,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(666, 582);
+            this.btnAdd.Location = new System.Drawing.Point(747, 584);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 16;
@@ -227,7 +227,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(810, 582);
+            this.btnUpdate.Location = new System.Drawing.Point(891, 584);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 17;
@@ -236,7 +236,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(949, 582);
+            this.btnDelete.Location = new System.Drawing.Point(1030, 584);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 18;
@@ -280,36 +280,36 @@
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(774, 435);
+            this.txtEnd.Location = new System.Drawing.Point(858, 439);
             this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(220, 20);
+            this.txtEnd.Size = new System.Drawing.Size(247, 20);
             this.txtEnd.TabIndex = 24;
             // 
             // txtDateStart
             // 
-            this.txtDateStart.Location = new System.Drawing.Point(774, 471);
+            this.txtDateStart.Location = new System.Drawing.Point(858, 475);
             this.txtDateStart.Name = "txtDateStart";
-            this.txtDateStart.Size = new System.Drawing.Size(220, 20);
+            this.txtDateStart.Size = new System.Drawing.Size(247, 20);
             this.txtDateStart.TabIndex = 25;
             // 
             // txtDateEnd
             // 
-            this.txtDateEnd.Location = new System.Drawing.Point(774, 509);
+            this.txtDateEnd.Location = new System.Drawing.Point(858, 513);
             this.txtDateEnd.Name = "txtDateEnd";
-            this.txtDateEnd.Size = new System.Drawing.Size(220, 20);
+            this.txtDateEnd.Size = new System.Drawing.Size(247, 20);
             this.txtDateEnd.TabIndex = 26;
             // 
             // txtDateInWeek
             // 
-            this.txtDateInWeek.Location = new System.Drawing.Point(774, 544);
+            this.txtDateInWeek.Location = new System.Drawing.Point(858, 548);
             this.txtDateInWeek.Name = "txtDateInWeek";
-            this.txtDateInWeek.Size = new System.Drawing.Size(220, 20);
+            this.txtDateInWeek.Size = new System.Drawing.Size(247, 20);
             this.txtDateInWeek.TabIndex = 27;
             // 
             // labelClassID
             // 
             this.labelClassID.AutoSize = true;
-            this.labelClassID.Location = new System.Drawing.Point(198, 438);
+            this.labelClassID.Location = new System.Drawing.Point(195, 438);
             this.labelClassID.Name = "labelClassID";
             this.labelClassID.Size = new System.Drawing.Size(63, 13);
             this.labelClassID.TabIndex = 28;
@@ -318,7 +318,7 @@
             // labelClassName
             // 
             this.labelClassName.AutoSize = true;
-            this.labelClassName.Location = new System.Drawing.Point(198, 473);
+            this.labelClassName.Location = new System.Drawing.Point(195, 473);
             this.labelClassName.Name = "labelClassName";
             this.labelClassName.Size = new System.Drawing.Size(67, 13);
             this.labelClassName.TabIndex = 29;
@@ -357,13 +357,13 @@
             this.Controls.Add(this.labelEvent);
             this.Controls.Add(this.radioBtnClass);
             this.Controls.Add(this.radioBtnEvent);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gridEventClass);
             this.Controls.Add(this.btnBack);
             this.Name = "EventClassManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventClassManagementForm";
             this.Load += new System.EventHandler(this.EventClassManagementForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEventClass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,7 +372,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridEventClass;
         private System.Windows.Forms.RadioButton radioBtnEvent;
         private System.Windows.Forms.RadioButton radioBtnClass;
         private System.Windows.Forms.Label labelEvent;
