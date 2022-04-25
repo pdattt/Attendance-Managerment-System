@@ -134,7 +134,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\AttendeeBUS.cs" />
+    <Compile Include="BUS\ClassBUS.cs" />
+    <Compile Include="BUS\EventBUS.cs" />
     <Compile Include="DAO\AttendeeDAO.cs" />
+    <Compile Include="DAO\ClassDAO.cs" />
+    <Compile Include="DAO\EventDAO.cs" />
     <Compile Include="Form\EventClassManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +168,7 @@
     <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Attendee.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Program.cs" />
