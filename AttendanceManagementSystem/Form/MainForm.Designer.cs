@@ -30,6 +30,7 @@
         {
             this.btnExist = new System.Windows.Forms.Button();
             this.btnAttendee = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExist
@@ -52,11 +53,22 @@
             this.btnAttendee.UseVisualStyleBackColor = true;
             this.btnAttendee.Click += new System.EventHandler(this.btnAttendee_Click);
             // 
+            // btn
+            // 
+            this.btn.Location = new System.Drawing.Point(485, 233);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(197, 55);
+            this.btn.TabIndex = 2;
+            this.btn.Text = "Quản Lý Sự Kiện";
+            this.btn.UseVisualStyleBackColor = true;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 566);
+            this.Controls.Add(this.btn);
             this.Controls.Add(this.btnAttendee);
             this.Controls.Add(this.btnExist);
             this.Name = "MainForm";
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.Button btnExist;
         private System.Windows.Forms.Button btnAttendee;
+        private System.Windows.Forms.Button btn;
     }
 }
 

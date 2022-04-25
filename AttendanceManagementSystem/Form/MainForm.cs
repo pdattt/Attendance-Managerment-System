@@ -31,5 +31,12 @@ namespace AttendanceManagementSystem
             this.Hide();
             attendee.Show();
         }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            EventClassManagementForm eventclass = new EventClassManagementForm();
+            this.Hide();
+            eventclass.Show();
+        }
     }
 }

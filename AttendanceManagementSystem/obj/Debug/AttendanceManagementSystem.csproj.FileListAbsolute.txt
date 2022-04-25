@@ -339,3 +339,4 @@ C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\ob
 C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.pdb
 C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.LoginForm.resources
 C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.RegisterForm.resources
+C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.EventClassManagementForm.resources

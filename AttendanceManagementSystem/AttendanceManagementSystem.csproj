@@ -135,6 +135,12 @@
   <ItemGroup>
     <Compile Include="BUS\AttendeeBUS.cs" />
     <Compile Include="DAO\AttendeeDAO.cs" />
+    <Compile Include="Form\EventClassManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\EventClassManagementForm.Designer.cs">
+      <DependentUpon>EventClassManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\AttendeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     <Compile Include="ReadRFIDCard.cs" />
     <EmbeddedResource Include="Form\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\EventClassManagementForm.resx">
+      <DependentUpon>EventClassManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
