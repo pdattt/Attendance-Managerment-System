@@ -60,6 +60,7 @@
             this.Controls.Add(this.btnAttendee);
             this.Controls.Add(this.btnExist);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 

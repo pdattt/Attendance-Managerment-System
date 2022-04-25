@@ -43,10 +43,9 @@
             // 
             // btnRegist
             // 
-            this.btnRegist.Location = new System.Drawing.Point(567, 430);
-            this.btnRegist.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegist.Location = new System.Drawing.Point(425, 349);
             this.btnRegist.Name = "btnRegist";
-            this.btnRegist.Size = new System.Drawing.Size(100, 28);
+            this.btnRegist.Size = new System.Drawing.Size(75, 23);
             this.btnRegist.TabIndex = 0;
             this.btnRegist.Text = "Đăng Ký";
             this.btnRegist.UseVisualStyleBackColor = true;
@@ -54,10 +53,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(349, 430);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(262, 349);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Trở Lại";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -66,74 +64,66 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(243, 217);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(182, 176);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Email:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(243, 171);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(182, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Họ và tên:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(243, 266);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(182, 216);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 17);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mật khẩu:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(243, 314);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(182, 255);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 17);
+            this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "Xác nhận mật khẩu:";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(468, 171);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.Location = new System.Drawing.Point(351, 139);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(319, 22);
+            this.txtName.Size = new System.Drawing.Size(240, 20);
             this.txtName.TabIndex = 6;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(468, 217);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(351, 176);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(319, 22);
+            this.txtEmail.Size = new System.Drawing.Size(240, 20);
             this.txtEmail.TabIndex = 7;
             // 
             // txtpPwd
             // 
-            this.txtpPwd.Location = new System.Drawing.Point(468, 266);
-            this.txtpPwd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtpPwd.Location = new System.Drawing.Point(351, 216);
             this.txtpPwd.Name = "txtpPwd";
-            this.txtpPwd.Size = new System.Drawing.Size(319, 22);
+            this.txtpPwd.Size = new System.Drawing.Size(240, 20);
             this.txtpPwd.TabIndex = 8;
             this.txtpPwd.TextChanged += new System.EventHandler(this.txtpPw_TextChanged);
             // 
             // txtConfirmPwd
             // 
-            this.txtConfirmPwd.Location = new System.Drawing.Point(468, 314);
-            this.txtConfirmPwd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConfirmPwd.Location = new System.Drawing.Point(351, 255);
             this.txtConfirmPwd.Name = "txtConfirmPwd";
-            this.txtConfirmPwd.Size = new System.Drawing.Size(319, 22);
+            this.txtConfirmPwd.Size = new System.Drawing.Size(240, 20);
             this.txtConfirmPwd.TabIndex = 9;
             this.txtConfirmPwd.TextChanged += new System.EventHandler(this.txtCheckPw_TextChanged);
             // 
@@ -142,19 +132,18 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Location = new System.Drawing.Point(449, 71);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(337, 58);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 19);
+            this.label5.Size = new System.Drawing.Size(92, 15);
             this.label5.TabIndex = 10;
             this.label5.Text = "TẠO TÀI KHOẢN";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Register
+            // RegisterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtConfirmPwd);
             this.Controls.Add(this.txtpPwd);
@@ -166,8 +155,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnRegist);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Register";
+            this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -215,6 +215,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridAttendee);
             this.Name = "AttendeeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AttendeeForm";
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).EndInit();
