@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttendanceManagementSystem.BUS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,7 +60,7 @@ namespace AttendanceManagementSystem
             txtDateEnd.Hide();
             txtDateStart.Hide();
             txtDateInWeek.Hide();
-            txtID.Text = GetRandom(6);
+            txtID.Text = new EventBUS().GetRandom(5);
         }
 
         private void radioBtnClass_CheckedChanged(object sender, EventArgs e)
@@ -80,20 +81,8 @@ namespace AttendanceManagementSystem
             txtDateEnd.Show();
             txtDateStart.Show();
             txtDateInWeek.Show();
-            txtID.Text = GetRandom(6);
+            txtID.Text = new ClassBUS().GetRandom(5);
         }
 
-        public string GetRandom(int lenght)
-        {
-            string letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            Random r = new Random((int)DateTime.Now.Ticks);
-
-            string randomID = "";
-            for (int i = 0; i < lenght; i++)
-            {
-                randomID += letter[r.Next(0, letter.Length - 1)];
-            }
-            return randomID;
-        }
     }
 }
