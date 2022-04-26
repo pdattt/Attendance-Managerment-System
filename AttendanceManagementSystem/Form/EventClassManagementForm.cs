@@ -59,7 +59,6 @@ namespace AttendanceManagementSystem
             txtDateEnd.Hide();
             txtDateStart.Hide();
             txtDateInWeek.Hide();
-            txtDate.Text = DateTime.Now.Date.ToShortDateString();
             txtID.Text = GetRandom(6);
         }
 
@@ -81,7 +80,6 @@ namespace AttendanceManagementSystem
             txtDateEnd.Show();
             txtDateStart.Show();
             txtDateInWeek.Show();
-            txtDate.Text = DateTime.Now.Date.ToShortDateString();
             txtID.Text = GetRandom(6);
         }
 
