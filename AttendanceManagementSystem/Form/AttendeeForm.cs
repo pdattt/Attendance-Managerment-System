@@ -19,7 +19,7 @@ namespace AttendanceManagementSystem
         }
         private void AttendeeForm_Load(object sender, EventArgs e)
         {
-            txtAttendeeID.Text = new AttendeeBUS().GetRandom(5);
+            txtAttendeeID.Text = new AttendeeBUS().GetRandom(4);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace AttendanceManagementSystem
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txtAttendeeID.Text = new AttendeeBUS().GetRandom(5);
+            txtAttendeeID.Text = new AttendeeBUS().GetRandom(4);
             txtAttendeeName.Text = "";
             txtAttendeeEmail.Text = "";
             txtAttendeeCardID.Text = "";
