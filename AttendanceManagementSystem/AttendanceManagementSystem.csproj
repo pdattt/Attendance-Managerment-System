@@ -180,7 +180,12 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
-    <Compile Include="ReadRFIDCard.cs" />
+    <Compile Include="Form\RFIDReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RFIDReader.Designer.cs">
+      <DependentUpon>RFIDReader.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +213,9 @@
     </Content>
     <EmbeddedResource Include="Form\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RFIDReader.resx">
+      <DependentUpon>RFIDReader.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="medicalproduct.json" />
     <None Include="packages.config" />
