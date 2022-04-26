@@ -45,6 +45,7 @@
             this.gridCalendar = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).BeginInit();
             this.SuspendLayout();
@@ -139,16 +140,16 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1043, 466);
+            this.btnAdd.Location = new System.Drawing.Point(1047, 453);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 51);
+            this.btnAdd.Size = new System.Drawing.Size(75, 76);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1124, 465);
+            this.btnUpdate.Location = new System.Drawing.Point(1128, 452);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 12;
@@ -157,7 +158,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1124, 492);
+            this.btnDelete.Location = new System.Drawing.Point(1128, 479);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 13;
@@ -192,11 +193,22 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(1128, 506);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 17;
+            this.btnRefresh.Text = "Làm Mới";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // AttendeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 651);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.gridCalendar);
@@ -217,6 +229,7 @@
             this.Name = "AttendeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AttendeeForm";
+            this.Load += new System.EventHandler(this.AttendeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).EndInit();
             this.ResumeLayout(false);
@@ -243,5 +256,6 @@
         private System.Windows.Forms.DataGridView gridCalendar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
