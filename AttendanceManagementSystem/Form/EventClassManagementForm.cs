@@ -60,6 +60,7 @@ namespace AttendanceManagementSystem
             txtDateStart.Hide();
             txtDateInWeek.Hide();
             txtDate.Text = DateTime.Now.Date.ToShortDateString();
+            txtID.Text = GetRandom(6);
         }
 
         private void radioBtnClass_CheckedChanged(object sender, EventArgs e)
@@ -81,6 +82,20 @@ namespace AttendanceManagementSystem
             txtDateStart.Show();
             txtDateInWeek.Show();
             txtDate.Text = DateTime.Now.Date.ToShortDateString();
+            txtID.Text = GetRandom(6);
+        }
+
+        public string GetRandom(int lenght)
+        {
+            string letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            Random r = new Random((int)DateTime.Now.Ticks);
+
+            string randomID = "";
+            for (int i = 0; i < lenght; i++)
+            {
+                randomID += letter[r.Next(0, letter.Length - 1)];
+            }
+            return randomID;
         }
     }
 }
