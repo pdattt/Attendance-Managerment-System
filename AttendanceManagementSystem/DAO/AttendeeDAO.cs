@@ -36,7 +36,7 @@ namespace DoAnLapTrinhA.DAO
             return listAttendee;
         }
 
-        /*public async ValueTask<Attendee> GetByID(int id)
+        public async ValueTask<Attendee> GetByID(string id)
         {
             Query qref = db.Collection("Attendee");
             QuerySnapshot snap = await qref.GetSnapshotAsync();
@@ -44,13 +44,13 @@ namespace DoAnLapTrinhA.DAO
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Attendee attendee = docsnap.ConvertTo<Attendee>();
-                if (attendee.AttendeeID == id)
+                if (attendee.AttendeeID.ToString() == id)
                 {
                     return attendee;
                 }
             }
             return null;
-        }*/
+        }
 
         public void AddNewAttendee(Attendee attendee)
         {
@@ -61,11 +61,32 @@ namespace DoAnLapTrinhA.DAO
                 {"AttendeeID", attendee.AttendeeID},
                 {"Name", attendee.Name},
                 {"Email", attendee.Email},
-                {"CardID", attendee.CardId},
+                {"CardID", attendee.CardID},
                 {"Role", attendee.Role}
             };
 
             coll.AddAsync(map);
+        }
+
+        public async ValueTask<bool> UpdateAttendee(Attendee newAttendee)
+        {
+            Attendee attendee = new Attendee();
+            Dictionary<string, object> map = new Dictionary<string, object>()
+            {
+                { attendee.AttendeeID, newAttendee.AttendeeID},
+                { attendee.Name, newAttendee.Name},
+                { attendee.Email, newAttendee.Email},
+                { attendee.CardID, newAttendee.CardID},
+                { attendee.Role, newAttendee.Role }
+            };
+
+            /*Query qref = db.Collection("Attendee");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+            if (snap.Exists)
+            {
+                await qref.UpdateAsync(snap);
+            }*/
+            return false;
         }
     }
 }

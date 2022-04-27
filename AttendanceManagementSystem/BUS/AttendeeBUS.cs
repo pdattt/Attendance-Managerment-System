@@ -28,5 +28,23 @@ namespace AttendanceManagementSystem.BUS
             new AttendeeDAO().AddNewAttendee(attendee);
             return true;
         }
+
+        public async ValueTask<List<Attendee>> SelectAll()
+        {
+            List<Attendee> listAttendee = await new AttendeeDAO().GetAll();
+            return listAttendee;
+        }
+
+        public async ValueTask<Attendee> GetDetails(string id)
+        {
+            Attendee attendee = await new AttendeeDAO().GetByID(id);    
+            return attendee;
+        }
+
+        public async ValueTask<bool> UpdateAttendee(Attendee newAttendee)
+        {
+            bool result = await new AttendeeDAO().UpdateAttendee(newAttendee);
+            return result;
+        }
     }
 }

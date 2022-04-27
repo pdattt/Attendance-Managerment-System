@@ -18,7 +18,7 @@ namespace AttendanceManagementSystem
         [FirestoreProperty]
         public string Email { get; set; }
         [FirestoreProperty]
-        public string CardId { get; set; }
+        public string CardID { get; set; }
 
         [FirestoreProperty]
         public string Role { get; set; }
@@ -30,7 +30,7 @@ namespace AttendanceManagementSystem
             AttendeeID = attendeeID;
             Name = name;
             Email = email;
-            CardId = cardId;
+            CardID = cardId;
             Role = role;
         }
     }

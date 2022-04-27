@@ -59,6 +59,7 @@
             this.gridAttendee.Name = "gridAttendee";
             this.gridAttendee.Size = new System.Drawing.Size(1092, 283);
             this.gridAttendee.TabIndex = 0;
+            this.gridAttendee.SelectionChanged += new System.EventHandler(this.gridAttendee_SelectionChanged);
             // 
             // label1
             // 
@@ -158,6 +159,7 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 

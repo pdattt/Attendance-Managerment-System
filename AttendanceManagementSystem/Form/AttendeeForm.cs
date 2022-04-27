@@ -17,9 +17,11 @@ namespace AttendanceManagementSystem
         {
             InitializeComponent();
         }
-        private void AttendeeForm_Load(object sender, EventArgs e)
+        private async void AttendeeForm_Load(object sender, EventArgs e)
         {
             txtAttendeeID.Text = new AttendeeBUS().GetRandom(4);
+            List<Attendee> listAttendee = await new AttendeeBUS().SelectAll();
+            gridAttendee.DataSource = listAttendee;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -49,6 +51,45 @@ namespace AttendanceManagementSystem
             }
             else
                 MessageBox.Show("Thêm thất bại!");
+        }
+
+        private async void gridAttendee_SelectionChanged(object sender, EventArgs e)
+        {
+            if (gridAttendee.SelectedRows.Count > 0)
+            {
+                string id = gridAttendee.SelectedRows[0].Cells["AttendeeID"].Value.ToString();
+                Attendee attendee = await new AttendeeBUS().GetDetails(id);
+                if (attendee != null)
+                {
+                    txtAttendeeID.Text = attendee.AttendeeID;
+                    txtAttendeeName.Text = attendee.Name;
+                    txtAttendeeEmail.Text = attendee.Email;
+                    txtAttendeeCardID.Text = attendee.CardID;
+                    txtAttendeeRole.Text = attendee.Role;
+                }
+            }
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Attendee newAttendee = new Attendee()
+            {
+                AttendeeID = txtAttendeeID.Text,
+                Name = txtAttendeeName.Text,
+                Email = txtAttendeeEmail.Text,
+                CardID = txtAttendeeCardID.Text,
+                Role = txtAttendeeRole.Text
+            };
+            bool result = await new AttendeeBUS().UpdateAttendee(newAttendee);
+            if (result)
+            {
+                List<Attendee> listAttendee = await new AttendeeBUS().SelectAll();
+                gridAttendee.DataSource = listAttendee;
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi!!!!!!!!!");
+            }
         }
     }
 }
