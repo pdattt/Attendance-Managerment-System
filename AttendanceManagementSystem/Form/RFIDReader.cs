@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace AttendanceManagementSystem
 {
     public partial class RFIDReader : Form
     {
         //object serialport to listen usb
-        System.IO.Ports.SerialPort Port;
+        private SerialPort Port;
 
         //variable to check if arduino is connect
         bool IsClosed = false;
@@ -25,53 +26,24 @@ namespace AttendanceManagementSystem
 
             //configuration of arduino, you check if com3 is the port correct, 
             //in arduino ide you can make it
-            Port = new System.IO.Ports.SerialPort();
-            Port.PortName = "COM4";
+            Port = new SerialPort();
             Port.BaudRate = 9600;
+            Port.PortName = "COM4";
+            Port.Parity = Parity.None;
+            Port.DataBits = 8;
+            //Port.StopBits = StopBits.None;
             Port.ReadTimeout = 500;
+            Port.DataReceived += Port_DataReceived;
 
             try
             {
                 Port.Open();
+                txtData.Text = "";
             }
-            catch { }
-        }
-
-        private void ListenSerial()
-        {
-            while (!IsClosed)
+            catch (Exception ex)
             {
-                try
-                {
-                    //read to data from arduino
-                    string AString = Port.ReadLine();
-
-                    //write the data in something textbox
-                    txtSomething.Invoke(new MethodInvoker(
-                        delegate
-                        {
-                            txtSomething.Text = AString;
-                        }
-                        ));
-
-                }
-                catch { }
+                MessageBox.Show(ex.Message, "Error");
             }
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //when the form will be closed this line close the serial port
-            IsClosed = true;
-            if (Port.IsOpen)
-                Port.Close();
-        }
-
-        private void RFIDReader_Load(object sender, EventArgs e)
-        {
-            //A Thread to listen forever the serial port
-            Thread Hilo = new Thread(ListenSerial);
-            Hilo.Start();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -79,6 +51,17 @@ namespace AttendanceManagementSystem
             MainForm mainForm = new MainForm();
             this.Hide();
             mainForm.Show();
+        }
+
+        void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            this.Invoke(new EventHandler(displaydata_event));
+        }
+
+        private void displaydata_event(object sender, EventArgs e)
+        {
+            string in_data = Port.ReadLine();
+            txtData.Text = in_data;
         }
     }
 }

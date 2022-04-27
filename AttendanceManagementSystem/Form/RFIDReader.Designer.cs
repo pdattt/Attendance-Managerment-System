@@ -29,23 +29,24 @@ namespace AttendanceManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSomething = new System.Windows.Forms.TextBox();
+            this.txtData = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtSomething
+            // txtData
             // 
-            this.txtSomething.Location = new System.Drawing.Point(112, 76);
-            this.txtSomething.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtSomething.Name = "txtSomething";
-            this.txtSomething.Size = new System.Drawing.Size(356, 20);
-            this.txtSomething.TabIndex = 0;
+            this.txtData.Location = new System.Drawing.Point(149, 94);
+            this.txtData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(473, 22);
+            this.txtData.TabIndex = 0;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(22, 26);
+            this.btnBack.Location = new System.Drawing.Point(29, 32);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "<-";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -53,15 +54,14 @@ namespace AttendanceManagementSystem
             // 
             // RFIDReader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.txtSomething);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.txtData);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RFIDReader";
             this.Text = "RFIDReader";
-            this.Load += new System.EventHandler(this.RFIDReader_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,7 +69,7 @@ namespace AttendanceManagementSystem
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtSomething;
+        private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Button btnBack;
     }
 }
