@@ -69,6 +69,7 @@
             this.txtPassWord.Size = new System.Drawing.Size(165, 20);
             this.txtPassWord.TabIndex = 3;
             this.txtPassWord.TextChanged += new System.EventHandler(this.txtPwd_TextChanged);
+            this.txtPassWord.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassWord_KeyDown);
             // 
             // label3
             // 

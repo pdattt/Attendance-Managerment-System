@@ -342,3 +342,4 @@ C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagem
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.LoginForm.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.RegisterForm.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.RFIDReader.resources
+C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.RFIDReader.resources
