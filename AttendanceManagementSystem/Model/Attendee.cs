@@ -12,7 +12,7 @@ namespace AttendanceManagementSystem
     {
 
         [FirestoreProperty]
-        public int AttendeeID { get; set; }
+        public string AttendeeID { get; set; }
         [FirestoreProperty]
         public string Name { get; set; }
         [FirestoreProperty]
@@ -25,7 +25,7 @@ namespace AttendanceManagementSystem
 
         public Attendee() { }
 
-        public Attendee(int attendeeID, string name, string email, string cardId, string role)
+        public Attendee(string attendeeID, string name, string email, string cardId, string role)
         {
             AttendeeID = attendeeID;
             Name = name;

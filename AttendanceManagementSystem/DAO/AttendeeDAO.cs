@@ -36,7 +36,7 @@ namespace DoAnLapTrinhA.DAO
             return listAttendee;
         }
 
-        public async ValueTask<Attendee> GetByID(int id)
+        /*public async ValueTask<Attendee> GetByID(int id)
         {
             Query qref = db.Collection("Attendee");
             QuerySnapshot snap = await qref.GetSnapshotAsync();
@@ -50,6 +50,22 @@ namespace DoAnLapTrinhA.DAO
                 }
             }
             return null;
+        }*/
+
+        public void AddNewAttendee(Attendee attendee)
+        {
+            CollectionReference coll = db.Collection("Attendee");
+
+            Dictionary<string, object> map = new Dictionary<string, object>()
+            {
+                {"AttendeeID", attendee.AttendeeID},
+                {"Name", attendee.Name},
+                {"Email", attendee.Email},
+                {"CardID", attendee.CardId},
+                {"Role", attendee.Role}
+            };
+
+            coll.AddAsync(map);
         }
     }
 }

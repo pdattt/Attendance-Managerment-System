@@ -31,12 +31,24 @@ namespace AttendanceManagementSystem
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txtAttendeeID.Text = new AttendeeBUS().GetRandom(4);
+            txtAttendeeID.Text = new AttendeeBUS().GetRandom(5);
             txtAttendeeName.Text = "";
             txtAttendeeEmail.Text = "";
             txtAttendeeCardID.Text = "";
             txtAttendeeRole.Text = "";
         }
 
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            Attendee attendee = new Attendee(txtAttendeeID.Text,txtAttendeeName.Text,txtAttendeeEmail.Text,txtAttendeeCardID.Text,txtAttendeeRole.Text);
+            bool result = await new AttendeeBUS().AddNewAttendee(attendee);
+
+            if (result)
+            {
+                MessageBox.Show("Thêm thành công!");
+            }
+            else
+                MessageBox.Show("Thêm thất bại!");
+        }
     }
 }
