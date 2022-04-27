@@ -16,7 +16,7 @@ namespace AttendanceManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RFIDReader());
+            Application.Run(new LoginForm());
         }
     }
 }

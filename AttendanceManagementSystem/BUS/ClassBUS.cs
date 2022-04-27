@@ -10,10 +10,10 @@ namespace AttendanceManagementSystem.BUS
     {
         public string GetRandom(int lenght)
         {
-            string letter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string letter = "0123456789";
             Random r = new Random((int)DateTime.Now.Ticks);
 
-            string randomID = "";
+            string randomID = "CL";
             for (int i = 0; i < lenght; i++)
             {
                 randomID += letter[r.Next(0, letter.Length - 1)];

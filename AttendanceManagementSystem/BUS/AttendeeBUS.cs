@@ -13,7 +13,7 @@ namespace AttendanceManagementSystem.BUS
             string letter = "0123456789";
             Random r = new Random((int)DateTime.Now.Ticks);
 
-            string randomID = "WKOS";
+            string randomID = "AT";
             for (int i = 0; i < lenght; i++)
             {
                 randomID += letter[r.Next(0, letter.Length - 1)];

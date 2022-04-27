@@ -73,5 +73,12 @@ namespace AttendanceManagementSystem
             Thread Hilo = new Thread(ListenSerial);
             Hilo.Start();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            this.Hide();
+            mainForm.Show();
+        }
     }
 }
