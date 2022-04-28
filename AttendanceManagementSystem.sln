@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceManagementSystem", "AttendanceManagementSystem\AttendanceManagementSystem.csproj", "{3DFDB87A-C8F9-42FD-B714-AE76E26A3ACE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttendanceRFIDCheckIn", "AttendanceRFIDCheckIn\AttendanceRFIDCheckIn.csproj", "{BC2E1A1A-95D5-4891-B620-7236D60D01AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3DFDB87A-C8F9-42FD-B714-AE76E26A3ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DFDB87A-C8F9-42FD-B714-AE76E26A3ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DFDB87A-C8F9-42FD-B714-AE76E26A3ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2E1A1A-95D5-4891-B620-7236D60D01AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2E1A1A-95D5-4891-B620-7236D60D01AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2E1A1A-95D5-4891-B620-7236D60D01AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2E1A1A-95D5-4891-B620-7236D60D01AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

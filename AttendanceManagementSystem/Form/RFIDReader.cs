@@ -17,9 +17,6 @@ namespace AttendanceManagementSystem
         //object serialport to listen usb
         private SerialPort Port;
 
-        //variable to check if arduino is connect
-        bool IsClosed = false;
-
         public RFIDReader()
         {
             InitializeComponent();
