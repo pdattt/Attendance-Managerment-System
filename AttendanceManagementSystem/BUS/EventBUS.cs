@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AttendanceManagementSystem.DAO;
+using AttendanceManagementSystem.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,20 @@ namespace AttendanceManagementSystem.BUS
                 randomID += letter[r.Next(0, letter.Length - 1)];
             }
             return randomID;
+        }
+
+        public async ValueTask<List<Event>> SelectAll()
+        {
+            List<Event> listEvent= await new EventDAO().GetAll();
+            return listEvent;
+        }
+
+        public async ValueTask<bool> AddEvent(Event e)
+        {
+            List<Event> listEvent = await new EventDAO().GetAll();
+
+            new EventDAO().AddNewEvent(e);
+            return true;
         }
     }
 }

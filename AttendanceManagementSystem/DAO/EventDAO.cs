@@ -35,5 +35,22 @@ namespace AttendanceManagementSystem.DAO
             }
             return listEvent;
         }
+
+        public void AddNewEvent(Event e)
+        {
+            CollectionReference coll = db.Collection("Event");
+
+            Dictionary<string, object> map = new Dictionary<string, object>()
+            {
+                {"EventID", e.EventID},
+                {"EventName", e.EventName},
+                {"EventDate", e.EventDate},
+                {"Location", e.Location},
+                {"EventStartTime", e.EventStartTime},
+                {"EventEndTime", e.EventEndTime}
+            };
+
+            coll.AddAsync(map);
+        }
     }
 }

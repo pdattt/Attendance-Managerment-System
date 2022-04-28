@@ -11,7 +11,7 @@ namespace AttendanceManagementSystem.Model
     public class Event
     {
         [FirestoreProperty]
-        public int EventID { get; set; }
+        public string EventID { get; set; }
 
         [FirestoreProperty]
         public string EventName { get; set; }
@@ -27,5 +27,20 @@ namespace AttendanceManagementSystem.Model
 
         [FirestoreProperty]
         public string EventEndTime { get; set; }
+        
+        public Event()
+        {
+
+        }
+
+        public Event(string eventID, string eventName, string eventDate, string location, string eventStartTime, string eventEndTime)
+        {
+            this.EventID = eventID;
+            this.EventName = eventName;
+            this.EventDate = eventDate;
+            this.Location = location;
+            this.EventStartTime = eventStartTime;
+            this.EventEndTime = eventEndTime;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AttendanceManagementSystem.BUS;
+using AttendanceManagementSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,5 +85,28 @@ namespace AttendanceManagementSystem
             txtID.Text = new ClassBUS().GetRandom(5);
         }
 
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (radioBtnEvent.Checked)
+            {
+                Event ev = new Event(txtID.Text,txtName.Text,txtDate.Text,txtLocation.Text,txtStart.Text,txtEnd.Text);
+                bool result = await new EventBUS().AddEvent(ev);
+
+                if (result)
+                {
+                    MessageBox.Show("Thêm thành công!");
+                    List<Event> listEvent = await new EventBUS().SelectAll();
+                    gridEventClass.DataSource = listEvent;
+                }
+                else
+                    MessageBox.Show("Thêm thất bại!");
+            }
+        }
+
+        private async void radioBtnEvent_Click(object sender, EventArgs e)
+        {
+            List<Event> listEvent = await new EventBUS().SelectAll();
+            gridEventClass.DataSource = listEvent;
+        }
     }
 }

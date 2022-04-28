@@ -91,6 +91,7 @@
             this.radioBtnEvent.Text = "Sự kiện";
             this.radioBtnEvent.UseVisualStyleBackColor = true;
             this.radioBtnEvent.CheckedChanged += new System.EventHandler(this.radioBtnEvent_CheckedChanged);
+            this.radioBtnEvent.Click += new System.EventHandler(this.radioBtnEvent_Click);
             // 
             // radioBtnClass
             // 
@@ -224,6 +225,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
