@@ -70,22 +70,20 @@ namespace DoAnLapTrinhA.DAO
 
         public async ValueTask<bool> UpdateAttendee(Attendee newAttendee)
         {
-            Attendee attendee = new Attendee();
-            Dictionary<string, object> map = new Dictionary<string, object>()
-            {
-                { attendee.AttendeeID, newAttendee.AttendeeID},
-                { attendee.Name, newAttendee.Name},
-                { attendee.Email, newAttendee.Email},
-                { attendee.CardID, newAttendee.CardID},
-                { attendee.Role, newAttendee.Role }
-            };
-
-            /*Query qref = db.Collection("Attendee");
+            Query qref = db.Collection("Attendee");
             QuerySnapshot snap = await qref.GetSnapshotAsync();
-            if (snap.Exists)
+
+            foreach (DocumentSnapshot docsnap in snap)
             {
-                await qref.UpdateAsync(snap);
-            }*/
+                Attendee attendee = docsnap.ConvertTo<Attendee>();
+                if (attendee.AttendeeID == newAttendee.AttendeeID)
+                {
+                    attendee.Name = newAttendee.Name;
+                    attendee.Email = newAttendee.Email;
+                    attendee.CardID = newAttendee.CardID;
+                    attendee.Role = newAttendee.Role;
+                }
+            }
             return false;
         }
     }

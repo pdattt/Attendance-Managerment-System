@@ -47,6 +47,11 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCardID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -55,9 +60,15 @@
             // gridAttendee
             // 
             this.gridAttendee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAttendee.Location = new System.Drawing.Point(114, 84);
+            this.gridAttendee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColID,
+            this.colName,
+            this.colEmail,
+            this.colCardID,
+            this.colRole});
+            this.gridAttendee.Location = new System.Drawing.Point(169, 81);
             this.gridAttendee.Name = "gridAttendee";
-            this.gridAttendee.Size = new System.Drawing.Size(1092, 283);
+            this.gridAttendee.Size = new System.Drawing.Size(994, 283);
             this.gridAttendee.TabIndex = 0;
             this.gridAttendee.SelectionChanged += new System.EventHandler(this.gridAttendee_SelectionChanged);
             // 
@@ -143,7 +154,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(1042, 465);
+            this.btnAdd.Location = new System.Drawing.Point(1006, 452);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 76);
             this.btnAdd.TabIndex = 11;
@@ -153,7 +164,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1123, 464);
+            this.btnUpdate.Location = new System.Drawing.Point(1087, 451);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 12;
@@ -163,7 +174,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1123, 491);
+            this.btnDelete.Location = new System.Drawing.Point(1087, 478);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 13;
@@ -173,9 +184,9 @@
             // gridCalendar
             // 
             this.gridCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridCalendar.Location = new System.Drawing.Point(114, 383);
+            this.gridCalendar.Location = new System.Drawing.Point(169, 380);
             this.gridCalendar.Name = "gridCalendar";
-            this.gridCalendar.Size = new System.Drawing.Size(448, 247);
+            this.gridCalendar.Size = new System.Drawing.Size(376, 247);
             this.gridCalendar.TabIndex = 14;
             // 
             // label6
@@ -200,7 +211,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(1123, 518);
+            this.btnRefresh.Location = new System.Drawing.Point(1087, 505);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 17;
@@ -220,12 +231,47 @@
             this.groupBox1.Controls.Add(this.txtAttendeeEmail);
             this.groupBox1.Controls.Add(this.txtAttendeeRole);
             this.groupBox1.Controls.Add(this.txtAttendeeCardID);
-            this.groupBox1.Location = new System.Drawing.Point(568, 373);
+            this.groupBox1.Location = new System.Drawing.Point(551, 370);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(449, 257);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhập";
+            // 
+            // ColID
+            // 
+            this.ColID.DataPropertyName = "AttendeeID";
+            this.ColID.HeaderText = "AttendeeID";
+            this.ColID.Name = "ColID";
+            this.ColID.Width = 150;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.Width = 250;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Width = 250;
+            // 
+            // colCardID
+            // 
+            this.colCardID.DataPropertyName = "CardID";
+            this.colCardID.HeaderText = "CardID";
+            this.colCardID.Name = "colCardID";
+            this.colCardID.Width = 150;
+            // 
+            // colRole
+            // 
+            this.colRole.DataPropertyName = "Role";
+            this.colRole.HeaderText = "Role";
+            this.colRole.Name = "colRole";
+            this.colRole.Width = 150;
             // 
             // AttendeeForm
             // 
@@ -275,5 +321,10 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCardID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRole;
     }
 }

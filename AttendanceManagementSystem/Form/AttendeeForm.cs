@@ -57,7 +57,7 @@ namespace AttendanceManagementSystem
         {
             if (gridAttendee.SelectedRows.Count > 0)
             {
-                string id = gridAttendee.SelectedRows[0].Cells["AttendeeID"].Value.ToString();
+                string id = gridAttendee.SelectedCells[0].Value.ToString();
                 Attendee attendee = await new AttendeeBUS().GetDetails(id);
                 if (attendee != null)
                 {
