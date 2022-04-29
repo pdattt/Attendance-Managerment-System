@@ -42,7 +42,14 @@ namespace AttendanceManagementSystem
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            Attendee attendee = new Attendee(txtAttendeeID.Text,txtAttendeeName.Text,txtAttendeeEmail.Text,txtAttendeeCardID.Text,txtAttendeeRole.Text);
+            Attendee attendee = new Attendee(
+                txtAttendeeID.Text,
+                txtAttendeeName.Text,
+                txtAttendeeEmail.Text,
+                Int32.Parse(txtAttendeeCardID.Text),
+                txtAttendeeRole.Text
+                );
+
             bool result = await new AttendeeBUS().AddNewAttendee(attendee);
 
             if (result)
@@ -64,7 +71,7 @@ namespace AttendanceManagementSystem
                     txtAttendeeID.Text = attendee.AttendeeID;
                     txtAttendeeName.Text = attendee.Name;
                     txtAttendeeEmail.Text = attendee.Email;
-                    txtAttendeeCardID.Text = attendee.CardID;
+                    txtAttendeeCardID.Text = attendee.CardID.ToString();
                     txtAttendeeRole.Text = attendee.Role;
                 }
             }
@@ -77,7 +84,7 @@ namespace AttendanceManagementSystem
                 AttendeeID = txtAttendeeID.Text,
                 Name = txtAttendeeName.Text,
                 Email = txtAttendeeEmail.Text,
-                CardID = txtAttendeeCardID.Text,
+                CardID = Int32.Parse(txtAttendeeCardID.Text),
                 Role = txtAttendeeRole.Text
             };
             bool result = await new AttendeeBUS().UpdateAttendee(newAttendee);

@@ -18,14 +18,14 @@ namespace AttendanceManagementSystem
         [FirestoreProperty]
         public string Email { get; set; }
         [FirestoreProperty]
-        public string CardID { get; set; }
+        public int CardID { get; set; }
 
         [FirestoreProperty]
         public string Role { get; set; }
 
         public Attendee() { }
 
-        public Attendee(string attendeeID, string name, string email, string cardId, string role)
+        public Attendee(string attendeeID, string name, string email, int cardId, string role)
         {
             AttendeeID = attendeeID;
             Name = name;
