@@ -36,5 +36,11 @@ namespace AttendanceManagementSystem.BUS
             new EventDAO().AddNewEvent(e);
             return true;
         }
+
+        public async ValueTask<Event> GetDetails(string id)
+        {
+            Event ev = await new EventDAO().GetByID(id);
+            return ev;
+        }
     }
 }

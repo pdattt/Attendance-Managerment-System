@@ -52,5 +52,21 @@ namespace AttendanceManagementSystem.DAO
 
             coll.AddAsync(map);
         }
+
+        public async ValueTask<Event> GetByID(string id)
+        {
+            Query qref = db.Collection("Event");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Event e = docsnap.ConvertTo<Event>();
+                if (e.EventID.ToString() == id)
+                {
+                    return e;
+                }
+            }
+            return null;
+        }
     }
 }
