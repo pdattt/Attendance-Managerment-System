@@ -44,7 +44,7 @@ namespace DoAnLapTrinhA.DAO
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Attendee attendee = docsnap.ConvertTo<Attendee>();
-                if (attendee.AttendeeID.ToString() == id)
+                if (attendee.AttendeeID == id)
                 {
                     return attendee;
                 }

@@ -9,10 +9,13 @@ namespace AttendanceRFIDCheckIn
 {
     public class AttendeeBUS
     {
-        public async ValueTask<Attendee> GetByCardID(string id)
+        public async ValueTask<string> GetByCardID(string id)
         {
-            Attendee attendee = await new AttendeeDAO().GetByCardID(id);
-            return attendee;
+            List<Attendee> attendees = await new AttendeeDAO().GetAllAttendee();
+
+            
+
+            return "aa";
         }
     }
 }

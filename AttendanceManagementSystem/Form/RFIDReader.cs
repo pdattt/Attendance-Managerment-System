@@ -58,7 +58,7 @@ namespace AttendanceManagementSystem
         private void displaydata_event(object sender, EventArgs e)
         {
             string in_data = Port.ReadLine();
-            txtData.Text = in_data;
+            txtData.Text = in_data.Replace("\r", "");
         }
     }
 }

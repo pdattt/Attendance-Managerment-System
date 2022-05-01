@@ -20,20 +20,20 @@ namespace AttendanceRFIDCheckIn
             db = Google.Cloud.Firestore.FirestoreDb.Create("attendancerfid-a6f84");
         }
 
-        public async ValueTask<Attendee> GetByCardID(string CardID)
+        public async ValueTask<List<Attendee>> GetAllAttendee()
         {
+            List<Attendee> attendees = new List<Attendee>();
+
             Query qref = db.Collection("Attendee");
             QuerySnapshot snap = await qref.GetSnapshotAsync();
 
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Attendee attendee = docsnap.ConvertTo<Attendee>();
-                if (attendee.AttendeeID.ToString() == CardID)
-                {
-                    return attendee;
-                }
+                attendees.Add(attendee);
             }
-            return null;
+
+            return attendees;
         }
     }
 }

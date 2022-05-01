@@ -16,13 +16,13 @@ namespace AttendanceRFIDCheckIn
     {
         //object serialport to listen usb
         private SerialPort Port;
-        List<ObjectToReturn> attendees;
+        List<Attendee> attendees;
 
         public AttendeeCheckIn()
         {
             InitializeComponent();
 
-            attendees = new List<ObjectToReturn>();
+            attendees = new List<Attendee>();
 
             //configuration of arduino, you check if com3 is the port correct, 
             //in arduino ide you can make it
@@ -53,20 +53,21 @@ namespace AttendanceRFIDCheckIn
         private async void displaydata_event(object sender, EventArgs e)
         {
             string in_data = Port.ReadLine();
-            Attendee attendee = await new AttendeeBUS().GetByCardID(in_data);
+            var attendee = await new AttendeeDAO().GetAllAttendee();
 
-            if(attendee != null)
-            {
-                ObjectToReturn objectToReturn = new ObjectToReturn
-                (
-                    attendee.AttendeeID,
-                    attendee.Name,
-                    DateTime.Today.ToString("dd/MM/yyyy"),
-                    DateTime.Now.ToString("HH:mm")
-                );
+            //if(attendee != null)
+            //{
+            //    ObjectToReturn objectToReturn = new ObjectToReturn
+            //    (
+            //        attendee.AttendeeID,
+            //        attendee.Name,
+            //        DateTime.Today.ToString("dd/MM/yyyy"),
+            //        DateTime.Now.ToString("HH:mm")
+            //    );
 
-                attendees.Add(objectToReturn);
-            }
+            //    attendees.Add(objectToReturn);
+            attendees = attendee;
+            //}
         }
 
         private void AttendeeCheckIn_Load(object sender, EventArgs e)
