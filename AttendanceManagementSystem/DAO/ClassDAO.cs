@@ -21,7 +21,7 @@ namespace AttendanceManagementSystem.DAO
             db = FirestoreDb.Create("attendancerfid-a6f84");
         }
 
-        public async ValueTask<List<Class>> GetAll()
+        public async ValueTask<List<Class>> GetAllClass()
         {
             listClass = new List<Class>();
 
@@ -34,6 +34,20 @@ namespace AttendanceManagementSystem.DAO
                 listClass.Add(classes);
             }
             return listClass;
+        }
+
+        public async ValueTask<Class> GetClassByID(string ID)
+        {
+            Query qref = db.Collection("Class");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Class cl = docsnap.ConvertTo<Class>();
+                if (cl.ClassID == ID)
+                    return cl;
+            }
+            return null;
         }
     }
 }

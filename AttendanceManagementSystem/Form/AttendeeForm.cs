@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,43 @@ namespace AttendanceManagementSystem
 {
     public partial class AttendeeForm : Form
     {
+        SerialPort Port;
+
         public AttendeeForm()
         {
             InitializeComponent();
+
+            Port = new SerialPort();
+            Port.BaudRate = 9600;
+            Port.PortName = "COM4";
+            Port.Parity = Parity.None;
+            Port.DataBits = 8;
+            //Port.StopBits = StopBits.None;
+            Port.ReadTimeout = 500;
+            Port.DataReceived += Port_DataReceived;
+
+            try
+            {
+                Port.Open();
+                txtAttendeeCardID.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
+
+        private void Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            this.Invoke(new EventHandler(displaydata_event));
+        }
+
+        private void displaydata_event(object sender, EventArgs e)
+        {
+            string in_data = Port.ReadLine();
+            txtAttendeeCardID.Text = in_data.Replace("\r", "");
+        }
+
         private async void AttendeeForm_Load(object sender, EventArgs e)
         {
             txtAttendeeID.Text = new AttendeeBUS().GetRandom(4);
@@ -46,7 +80,7 @@ namespace AttendanceManagementSystem
                 txtAttendeeID.Text,
                 txtAttendeeName.Text,
                 txtAttendeeEmail.Text,
-                Int32.Parse(txtAttendeeCardID.Text),
+                txtAttendeeCardID.Text,
                 txtAttendeeRole.Text
                 );
 
@@ -84,7 +118,7 @@ namespace AttendanceManagementSystem
                 AttendeeID = txtAttendeeID.Text,
                 Name = txtAttendeeName.Text,
                 Email = txtAttendeeEmail.Text,
-                CardID = Int32.Parse(txtAttendeeCardID.Text),
+                CardID = txtAttendeeCardID.Text,
                 Role = txtAttendeeRole.Text
             };
             bool result = await new AttendeeBUS().UpdateAttendee(newAttendee);

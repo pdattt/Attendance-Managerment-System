@@ -25,6 +25,8 @@ namespace AttendanceManagementSystem.BUS
         public async ValueTask<bool> AddNewAttendee(Attendee attendee) { 
             List<Attendee> listAttendee = await new AttendeeDAO().GetAll();
 
+
+
             new AttendeeDAO().AddNewAttendee(attendee);
             return true;
         }

@@ -136,6 +136,7 @@
     <Compile Include="BUS\AttendeeBUS.cs" />
     <Compile Include="BUS\ClassBUS.cs" />
     <Compile Include="BUS\EventBUS.cs" />
+    <Compile Include="BUS\RFIDCardBUS.cs" />
     <Compile Include="DAO\AttendeeDAO.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\EventDAO.cs" />

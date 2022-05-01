@@ -11,13 +11,10 @@ namespace AttendanceManagementSystem.Model
     public class Class
     {
         [FirestoreProperty]
-        public int ClassID { get; set; }
+        public string ClassID { get; set; }
 
         [FirestoreProperty]
         public string ClassName { get; set; }
-
-        [FirestoreProperty]
-        public string ClassDate { get; set; }
 
         [FirestoreProperty]
         public string Location { get; set; }
@@ -35,6 +32,6 @@ namespace AttendanceManagementSystem.Model
         public string ClassDateEnd { get; set; }
 
         [FirestoreProperty]
-        public string ClassDateInWeek { get; set; }
+        public string ClassDate { get; set; }
     }
 }

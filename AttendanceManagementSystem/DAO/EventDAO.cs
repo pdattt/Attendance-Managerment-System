@@ -53,7 +53,7 @@ namespace AttendanceManagementSystem.DAO
             coll.AddAsync(map);
         }
 
-        public async ValueTask<Event> GetByID(string id)
+        public async ValueTask<Event> GetEventByID(string id)
         {
             Query qref = db.Collection("Event");
             QuerySnapshot snap = await qref.GetSnapshotAsync();

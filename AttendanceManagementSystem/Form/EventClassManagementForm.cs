@@ -14,6 +14,10 @@ namespace AttendanceManagementSystem
 {
     public partial class EventClassManagementForm : Form
     {
+        List<Event> events;
+        List<Class> classes;
+        string state = "";
+
         public EventClassManagementForm()
         {
             InitializeComponent();
@@ -33,7 +37,6 @@ namespace AttendanceManagementSystem
             labelClassName.Hide();
             labelDateEnd.Hide();
             labelDateStart.Hide();
-            labelDateInWeek.Hide();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -57,10 +60,8 @@ namespace AttendanceManagementSystem
             labelClassName.Hide();
             labelDateEnd.Hide();
             labelDateStart.Hide();
-            labelDateInWeek.Hide();
             txtDateEnd.Hide();
             txtDateStart.Hide();
-            txtDateInWeek.Hide();
             txtID.Text = new EventBUS().GetRandom(5);
         }
 
@@ -78,11 +79,9 @@ namespace AttendanceManagementSystem
             labelClassName.Show();
             labelDateEnd.Show();
             labelDateStart.Show();
-            labelDateInWeek.Show();
             txtDateEnd.Show();
             txtDateStart.Show();
-            txtDateInWeek.Show();
-            txtID.Text = new ClassBUS().GetRandom(5);
+            txtID.Text = new ClassBUS().GetRandomID(5);
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
@@ -90,12 +89,12 @@ namespace AttendanceManagementSystem
             if (radioBtnEvent.Checked)
             {
                 Event ev = new Event(txtID.Text,txtName.Text,txtDate.Text,txtLocation.Text,txtStart.Text,txtEnd.Text);
-                bool result = await new EventBUS().AddEvent(ev);
+                bool result = new EventBUS().AddEvent(ev);
 
                 if (result)
                 {
                     MessageBox.Show("Thêm thành công!");
-                    List<Event> listEvent = await new EventBUS().SelectAll();
+                    List<Event> listEvent = await new EventBUS().GetAllEvent();
                     gridEventClass.DataSource = listEvent;
                 }
                 else
@@ -105,8 +104,57 @@ namespace AttendanceManagementSystem
 
         private async void radioBtnEvent_Click(object sender, EventArgs e)
         {
-            List<Event> listEvent = await new EventBUS().SelectAll();
-            gridEventClass.DataSource = listEvent;
+            List<Event> events = await new EventBUS().GetAllEvent();
+            gridEventClass.DataSource = events;
         }
+        private async void radioBtnClass_Click(object sender, EventArgs e)
+        {
+            List<Class> classes = await new ClassBUS().GetAllClass();
+            gridEventClass.DataSource = classes;
+            state = "class";
+        }
+
+        private async void gridEventClass_SelectionChanged(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            txtName.Text = "";
+            txtLocation.Text = "";
+            txtDate.Text = "";
+            txtStart.Text = "";
+            txtEnd.Text = "";
+            txtDateStart.Text = "";
+            txtDateEnd.Text = "";
+
+            if (gridEventClass.SelectedRows.Count > 0)
+            {
+                string id = gridEventClass.SelectedCells[0].Value.ToString();
+
+                if (state == "event")
+                {
+                    Event eve = await new EventBUS().GetEventByID(id);
+
+                    txtID.Text = eve.EventID;
+                    txtName.Text = eve.EventName;
+                    txtLocation.Text = eve.Location;
+                    txtDate.Text = eve.EventDate;
+                    txtStart.Text = eve.EventStartTime;
+                    txtEnd.Text = eve.EventEndTime;
+                }
+                else {
+                    Class cls = await new ClassBUS().GetClassByID(id);
+
+                    txtID.Text = cls.ClassID;
+                    txtName.Text = cls.ClassName;
+                    txtLocation.Text = cls.Location;
+                    txtDate.Text = cls.ClassDate;
+                    txtStart.Text = cls.ClassStartTime;
+                    txtEnd.Text = cls.ClassEndTime;
+                    txtDateStart.Text = cls.ClassDateStart;
+                    txtDateEnd.Text = cls.ClassDateEnd;
+                }
+            }
+        }
+
+
     }
 }

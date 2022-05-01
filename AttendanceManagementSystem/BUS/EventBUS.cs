@@ -23,23 +23,21 @@ namespace AttendanceManagementSystem.BUS
             return randomID;
         }
 
-        public async ValueTask<List<Event>> SelectAll()
+        public async ValueTask<List<Event>> GetAllEvent()
         {
             List<Event> listEvent= await new EventDAO().GetAll();
             return listEvent;
         }
 
-        public async ValueTask<bool> AddEvent(Event e)
+        public bool AddEvent(Event e)
         {
-            List<Event> listEvent = await new EventDAO().GetAll();
-
             new EventDAO().AddNewEvent(e);
             return true;
         }
 
-        public async ValueTask<Event> GetDetails(string id)
+        public async ValueTask<Event> GetEventByID(string id)
         {
-            Event ev = await new EventDAO().GetByID(id);
+            Event ev = await new EventDAO().GetEventByID(id);
             return ev;
         }
     }
