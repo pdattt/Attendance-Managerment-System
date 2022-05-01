@@ -17,7 +17,7 @@ namespace AttendanceRFIDCheckIn.Model
         [FirestoreProperty]
         public string Email { get; set; }
         [FirestoreProperty]
-        public int CardID { get; set; }
+        public string CardID { get; set; }
 
         [FirestoreProperty]
         public string Role { get; set; }

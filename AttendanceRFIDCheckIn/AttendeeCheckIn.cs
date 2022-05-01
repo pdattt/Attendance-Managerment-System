@@ -16,13 +16,13 @@ namespace AttendanceRFIDCheckIn
     {
         //object serialport to listen usb
         private SerialPort Port;
-        List<Attendee> attendees;
+        List<ObjectToReturn> attendees = new List<ObjectToReturn>();
 
         public AttendeeCheckIn()
         {
             InitializeComponent();
 
-            attendees = new List<Attendee>();
+            //attendees 
 
             //configuration of arduino, you check if com3 is the port correct, 
             //in arduino ide you can make it
@@ -52,22 +52,26 @@ namespace AttendanceRFIDCheckIn
 
         private async void displaydata_event(object sender, EventArgs e)
         {
-            string in_data = Port.ReadLine();
-            var attendee = await new AttendeeDAO().GetAllAttendee();
+            string in_data = Port.ReadLine().Replace("\r", "");
+            Attendee attendee = await new AttendeeBUS().GetByCardID(in_data);
 
-            //if(attendee != null)
-            //{
-            //    ObjectToReturn objectToReturn = new ObjectToReturn
-            //    (
-            //        attendee.AttendeeID,
-            //        attendee.Name,
-            //        DateTime.Today.ToString("dd/MM/yyyy"),
-            //        DateTime.Now.ToString("HH:mm")
-            //    );
+            if (attendee != null)
+            {
+                ObjectToReturn objectToReturn = new ObjectToReturn
+                (
+                    attendee.AttendeeID,
+                    attendee.Name,
+                    DateTime.Today.ToString("dd/MM/yyyy"),
+                    DateTime.Now.ToString("HH:mm")
+                );
 
-            //    attendees.Add(objectToReturn);
-            attendees = attendee;
-            //}
+                attendees.Add(objectToReturn);               
+                List<ObjectToReturn> obj = new List<ObjectToReturn>();
+
+                obj = attendees;
+                gridCheckIn.DataSource = obj;
+                Refresh();
+            }
         }
 
         private void AttendeeCheckIn_Load(object sender, EventArgs e)
