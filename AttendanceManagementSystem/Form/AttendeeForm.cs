@@ -76,6 +76,13 @@ namespace AttendanceManagementSystem
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            bool checkCardID = await new AttendeeBUS().CheckCardIDExist(txtAttendeeCardID.Text);
+
+            if (checkCardID) {
+                MessageBox.Show("Thẻ đã được sử dụng cho một người dùng khác!");
+                return;
+            }
+
             Attendee attendee = new Attendee(
                 txtAttendeeID.Text,
                 txtAttendeeName.Text,

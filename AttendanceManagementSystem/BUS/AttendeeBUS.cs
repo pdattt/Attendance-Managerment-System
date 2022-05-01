@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AttendanceManagementSystem.BUS
 {
@@ -47,6 +48,17 @@ namespace AttendanceManagementSystem.BUS
         {
             bool result = await new AttendeeDAO().UpdateAttendee(newAttendee);
             return result;
+        }
+
+        public async Task<bool> CheckCardIDExist(string ID)
+        {
+            List<Attendee> attendees= await new AttendeeDAO().GetAll();
+
+            foreach (Attendee attendee in attendees)
+                if (attendee.CardID == ID)
+                    return true;
+
+            return false;
         }
     }
 }
