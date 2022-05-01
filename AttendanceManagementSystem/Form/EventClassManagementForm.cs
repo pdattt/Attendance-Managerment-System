@@ -14,8 +14,6 @@ namespace AttendanceManagementSystem
 {
     public partial class EventClassManagementForm : Form
     {
-        List<Event> events;
-        List<Class> classes;
         string state = "";
 
         public EventClassManagementForm()
@@ -86,15 +84,43 @@ namespace AttendanceManagementSystem
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            if (radioBtnEvent.Checked)
+            if (state == "event")
             {
-                Event ev = new Event(txtID.Text,txtName.Text,txtDate.Text,txtLocation.Text,txtStart.Text,txtEnd.Text);
-                bool result = new EventBUS().AddEvent(ev);
+                Event eve = new Event(txtID.Text, 
+                                      txtName.Text,
+                                      txtDate.Text,
+                                      txtLocation.Text,
+                                      txtStart.Text,
+                                      txtEnd.Text);
+
+                bool result = new EventBUS().AddNewEvent(eve);
 
                 if (result)
                 {
                     MessageBox.Show("Thêm thành công!");
                     List<Event> listEvent = await new EventBUS().GetAllEvent();
+                    gridEventClass.DataSource = listEvent;
+                }
+                else
+                    MessageBox.Show("Thêm thất bại!");
+            }
+            else
+            {
+                Class cls = new Class(txtID.Text,
+                                      txtName.Text,
+                                      txtLocation.Text,
+                                      txtStart.Text,
+                                      txtEnd.Text,
+                                      txtDateStart.Text,
+                                      txtDateEnd.Text,
+                                      txtDate.Text);
+
+                bool result = new ClassBUS().AddNewClass(cls);
+
+                if (result)
+                {
+                    MessageBox.Show("Thêm thành công!");
+                    List<Class> listEvent = await new ClassBUS().GetAllClass();
                     gridEventClass.DataSource = listEvent;
                 }
                 else

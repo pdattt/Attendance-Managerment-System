@@ -36,7 +36,7 @@ namespace AttendanceManagementSystem.DAO
             return listEvent;
         }
 
-        public void AddNewEvent(Event e)
+        public bool AddNewEvent(Event e)
         {
             CollectionReference coll = db.Collection("Event");
 
@@ -50,7 +50,14 @@ namespace AttendanceManagementSystem.DAO
                 {"EventEndTime", e.EventEndTime}
             };
 
-            coll.AddAsync(map);
+            try {
+                coll.AddAsync(map);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public async ValueTask<Event> GetEventByID(string id)

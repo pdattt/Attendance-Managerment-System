@@ -36,6 +36,32 @@ namespace AttendanceManagementSystem.DAO
             return listClass;
         }
 
+        public bool AddNewClass(Class cls)
+        {
+            CollectionReference coll = db.Collection("Class");
+
+            Dictionary<string, object> map = new Dictionary<string, object>()
+            {
+                {"ClassID", cls.ClassID},
+                {"ClassName", cls.ClassName},
+                {"ClassDate", cls.ClassDate},
+                {"Location", cls.Location},
+                {"ClassStartTime", cls.ClassStartTime},
+                {"ClassEndTime", cls.ClassEndTime},
+                {"ClassDateStart", cls.ClassDateStart},
+                {"ClassDateEnd", cls.ClassDateEnd}
+            };
+
+            try {
+                coll.AddAsync(map);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public async ValueTask<Class> GetClassByID(string ID)
         {
             Query qref = db.Collection("Class");

@@ -32,5 +32,10 @@ namespace AttendanceManagementSystem.BUS
         {
             return await new ClassDAO().GetAllClass();
         }
+
+        public bool AddNewClass(Class cls)
+        {
+            return new ClassDAO().AddNewClass(cls);
+        }
     }
 }

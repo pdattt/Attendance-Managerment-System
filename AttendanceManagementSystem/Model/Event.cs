@@ -27,11 +27,8 @@ namespace AttendanceManagementSystem.Model
 
         [FirestoreProperty]
         public string EventEndTime { get; set; }
-        
-        public Event()
-        {
-
-        }
+      
+        public Event() { }
 
         public Event(string eventID, string eventName, string eventDate, string location, string eventStartTime, string eventEndTime)
         {

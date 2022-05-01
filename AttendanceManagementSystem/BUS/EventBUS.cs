@@ -29,10 +29,9 @@ namespace AttendanceManagementSystem.BUS
             return listEvent;
         }
 
-        public bool AddEvent(Event e)
+        public bool AddNewEvent(Event e)
         {
-            new EventDAO().AddNewEvent(e);
-            return true;
+            return new EventDAO().AddNewEvent(e);
         }
 
         public async ValueTask<Event> GetEventByID(string id)

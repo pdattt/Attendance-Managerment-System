@@ -10,6 +10,7 @@ namespace AttendanceManagementSystem.Model
     [FirestoreData]
     public class Class
     {
+
         [FirestoreProperty]
         public string ClassID { get; set; }
 
@@ -33,5 +34,17 @@ namespace AttendanceManagementSystem.Model
 
         [FirestoreProperty]
         public string ClassDate { get; set; }
+
+        public Class(string classID, string className, string location, string classStartTime, string classEndTime, string classDateStart, string classDateEnd, string classDate)
+        {
+            ClassID = classID;
+            ClassName = className;
+            Location = location;
+            ClassStartTime = classStartTime;
+            ClassEndTime = classEndTime;
+            ClassDateStart = classDateStart;
+            ClassDateEnd = classDateEnd;
+            ClassDate = classDate;
+        }
     }
 }
