@@ -138,6 +138,7 @@
     <Compile Include="BUS\EventBUS.cs" />
     <Compile Include="DAO\AttendeeDAO.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
+    <Compile Include="DAO\EventClassDAO.cs" />
     <Compile Include="DAO\EventDAO.cs" />
     <Compile Include="Form\EventClassManagementForm.cs">
       <SubType>Form</SubType>
