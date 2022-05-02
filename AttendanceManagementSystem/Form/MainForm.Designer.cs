@@ -72,7 +72,6 @@
             this.btnRFID.TabIndex = 3;
             this.btnRFID.Text = "RFID Reader";
             this.btnRFID.UseVisualStyleBackColor = true;
-            this.btnRFID.Click += new System.EventHandler(this.btnRFID_Click);
             // 
             // MainForm
             // 

@@ -181,6 +181,30 @@ namespace AttendanceManagementSystem
             }
         }
 
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn về việc xóa môn này chứ?", "Xác nhận xóa môn" ,MessageBoxButtons.YesNoCancel);
+            if (result == DialogResult.Yes)
+            {
+                return;
+            }
 
+            if (gridEventClass.SelectedRows.Count > 0)
+            {
+                string id = gridEventClass.SelectedCells[0].Value.ToString();
+
+                if (state == "event")
+                {
+                    Event eve = await new EventBUS().GetEventByID(id);
+                    
+                }
+                else
+                {
+                    Class cls = await new ClassBUS().GetClassByID(id);
+
+
+                }
+            }
+        }
     }
 }

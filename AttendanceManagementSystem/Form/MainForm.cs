@@ -38,12 +38,5 @@ namespace AttendanceManagementSystem
             this.Hide();
             eventclass.Show();
         }
-
-        private void btnRFID_Click(object sender, EventArgs e)
-        {
-            RFIDReader rFIDReader = new RFIDReader();
-            this.Hide();
-            rFIDReader.Show();
-        }
     }
 }

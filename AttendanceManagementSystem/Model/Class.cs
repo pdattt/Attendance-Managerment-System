@@ -35,6 +35,7 @@ namespace AttendanceManagementSystem.Model
         [FirestoreProperty]
         public string ClassDate { get; set; }
 
+        public Class() { }
         public Class(string classID, string className, string location, string classStartTime, string classEndTime, string classDateStart, string classDateEnd, string classDate)
         {
             ClassID = classID;
