@@ -79,6 +79,7 @@
             this.gridEventClass.RowHeadersWidth = 51;
             this.gridEventClass.Size = new System.Drawing.Size(1310, 348);
             this.gridEventClass.TabIndex = 1;
+            this.gridEventClass.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridEventClass_RowHeaderMouseDoubleClick);
             this.gridEventClass.SelectionChanged += new System.EventHandler(this.gridEventClass_SelectionChanged);
             // 
             // radioBtnEvent

@@ -210,5 +210,14 @@ namespace AttendanceManagementSystem
 
             MessageBox.Show("Xóa thất bại!");
         }
+
+        private void gridEventClass_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string id = gridEventClass.SelectedCells[0].Value.ToString();
+
+            AttendeeListInEvent frm = new AttendeeListInEvent(id);
+            frm.Show();
+            this.Enabled = false;
+        }
     }
 }

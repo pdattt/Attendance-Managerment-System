@@ -133,6 +133,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\AttendeeListEventBUS.cs" />
+    <Compile Include="DAO\AttendeeListEventDAO.cs" />
+    <Compile Include="Form\AddAttendeeToEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AddAttendeeToEventForm.Designer.cs">
+      <DependentUpon>AddAttendeeToEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AttendeeListInEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AttendeeListInEventForm.Designer.cs">
+      <DependentUpon>AttendeeListInEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUS\AttendeeBUS.cs" />
     <Compile Include="BUS\ClassBUS.cs" />
     <Compile Include="BUS\EventBUS.cs" />
@@ -169,6 +183,7 @@
     <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Att_Eve.cs" />
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Attendee.cs" />
     <Compile Include="Model\Event.cs" />
@@ -181,8 +196,14 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\User.cs" />
+    <EmbeddedResource Include="Form\AddAttendeeToEventForm.resx">
+      <DependentUpon>AddAttendeeToEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\AttendeeForm.resx">
       <DependentUpon>AttendeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AttendeeListInEventForm.resx">
+      <DependentUpon>AttendeeListInEventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\EventClassManagementForm.resx">
       <DependentUpon>EventClassManagementForm.cs</DependentUpon>

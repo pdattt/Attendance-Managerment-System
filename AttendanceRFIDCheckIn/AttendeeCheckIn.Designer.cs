@@ -50,7 +50,7 @@ namespace AttendanceRFIDCheckIn
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.gridCheckIn);
             this.Name = "AttendeeCheckIn";
-            this.Text = "AttendeeCheckIn";
+            this.Text = "d";
             this.Load += new System.EventHandler(this.AttendeeCheckIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridCheckIn)).EndInit();
             this.ResumeLayout(false);
