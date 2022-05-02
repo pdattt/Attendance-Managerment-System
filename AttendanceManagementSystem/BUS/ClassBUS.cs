@@ -37,5 +37,10 @@ namespace AttendanceManagementSystem.BUS
         {
             return new ClassDAO().AddNewClass(cls);
         }
+
+        public async Task<bool> DeleteClassByID(string id)
+        {
+            return await new ClassDAO().DeleteClassByID(id);
+        }
     }
 }

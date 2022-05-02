@@ -62,6 +62,31 @@ namespace AttendanceManagementSystem.DAO
             }
         }
 
+        public async Task<bool> DeleteClassByID(string id)
+        {
+            Query qref = db.Collection("Class");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Class cls = docsnap.ConvertTo<Class>();
+                if (cls.ClassID.ToString() == id)
+                {
+                    try
+                    {
+                        await docsnap.Reference.DeleteAsync();
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         public async ValueTask<Class> GetClassByID(string ID)
         {
             Query qref = db.Collection("Class");

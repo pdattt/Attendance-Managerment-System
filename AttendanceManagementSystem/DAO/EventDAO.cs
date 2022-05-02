@@ -60,6 +60,31 @@ namespace AttendanceManagementSystem.DAO
             }
         }
 
+        public async Task<bool> DeleteEventByID(string id)
+        {
+            Query qref = db.Collection("Event");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Event e = docsnap.ConvertTo<Event>();
+                if (e.EventID.ToString() == id)
+                {
+                    try
+                    {
+                        await docsnap.Reference.DeleteAsync();
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         public async ValueTask<Event> GetEventByID(string id)
         {
             Query qref = db.Collection("Event");

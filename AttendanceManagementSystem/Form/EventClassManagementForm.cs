@@ -132,6 +132,7 @@ namespace AttendanceManagementSystem
         {
             List<Event> events = await new EventBUS().GetAllEvent();
             gridEventClass.DataSource = events;
+            state = "event";
         }
         private async void radioBtnClass_Click(object sender, EventArgs e)
         {
@@ -183,28 +184,31 @@ namespace AttendanceManagementSystem
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Bạn có chắc chắn về việc xóa môn này chứ?", "Xác nhận xóa môn" ,MessageBoxButtons.YesNoCancel);
-            if (result == DialogResult.Yes)
-            {
-                return;
-            }
-
             if (gridEventClass.SelectedRows.Count > 0)
             {
                 string id = gridEventClass.SelectedCells[0].Value.ToString();
+                string message = "Mã: " + id;
 
-                if (state == "event")
-                {
-                    Event eve = await new EventBUS().GetEventByID(id);
-                    
-                }
+                var result = MessageBox.Show(message + "\nBạn có chắc chắn về việc xóa chứ?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                    return;
+
+                dynamic checkDelete;
+
+                if (state == "event") 
+                    checkDelete = await new EventBUS().DeleteEventByID(id);
                 else
+                    checkDelete = await new ClassBUS().DeleteClassByID(id);
+
+                if (checkDelete)
                 {
-                    Class cls = await new ClassBUS().GetClassByID(id);
-
-
+                    MessageBox.Show("Xoá thành công");
+                    Refresh();
+                    return;
                 }
             }
+
+            MessageBox.Show("Xóa thất bại!");
         }
     }
 }

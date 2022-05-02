@@ -39,5 +39,10 @@ namespace AttendanceManagementSystem.BUS
             Event ev = await new EventDAO().GetEventByID(id);
             return ev;
         }
+
+        public Task<bool> DeleteEventByID(string id)
+        {
+            return new EventDAO().DeleteEventByID(id);
+        }
     }
 }
