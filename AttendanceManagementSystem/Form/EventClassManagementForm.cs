@@ -84,7 +84,7 @@ namespace AttendanceManagementSystem
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            if (state == "event")
+            if (state == "Event")
             {
                 Event eve = new Event(txtID.Text, 
                                       txtName.Text,
@@ -132,13 +132,13 @@ namespace AttendanceManagementSystem
         {
             List<Event> events = await new EventBUS().GetAllEvent();
             gridEventClass.DataSource = events;
-            state = "event";
+            state = "Event";
         }
         private async void radioBtnClass_Click(object sender, EventArgs e)
         {
             List<Class> classes = await new ClassBUS().GetAllClass();
             gridEventClass.DataSource = classes;
-            state = "class";
+            state = "Class";
         }
 
         private async void gridEventClass_SelectionChanged(object sender, EventArgs e)
@@ -156,7 +156,7 @@ namespace AttendanceManagementSystem
             {
                 string id = gridEventClass.SelectedCells[0].Value.ToString();
 
-                if (state == "event")
+                if (state == "Event")
                 {
                     Event eve = await new EventBUS().GetEventByID(id);
 
@@ -195,7 +195,7 @@ namespace AttendanceManagementSystem
 
                 dynamic checkDelete;
 
-                if (state == "event") 
+                if (state == "Event") 
                     checkDelete = await new EventBUS().DeleteEventByID(id);
                 else
                     checkDelete = await new ClassBUS().DeleteClassByID(id);

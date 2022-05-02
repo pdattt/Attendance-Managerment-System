@@ -24,7 +24,7 @@ namespace AttendanceManagementSystem.BUS
         }
 
         public async ValueTask<bool> AddNewAttendee(Attendee attendee) { 
-            List<Attendee> listAttendee = await new AttendeeDAO().GetAll();
+            List<Attendee> listAttendee = await new AttendeeDAO().GetAllAttendee();
 
 
 
@@ -34,7 +34,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async ValueTask<List<Attendee>> SelectAll()
         {
-            List<Attendee> listAttendee = await new AttendeeDAO().GetAll();
+            List<Attendee> listAttendee = await new AttendeeDAO().GetAllAttendee();
             return listAttendee;
         }
 
@@ -52,7 +52,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async Task<bool> CheckCardIDExist(string ID)
         {
-            List<Attendee> attendees= await new AttendeeDAO().GetAll();
+            List<Attendee> attendees= await new AttendeeDAO().GetAllAttendee();
 
             foreach (Attendee attendee in attendees)
                 if (attendee.CardID == ID)

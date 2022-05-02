@@ -36,5 +36,12 @@ namespace AttendanceManagementSystem
                 if (form.Name == "EventClassManagementForm")
                     form.Enabled = true;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddAttendeeToEvent addForm = new AddAttendeeToEvent(eventID);
+            addForm.Show();
+            this.Hide();
+        }
     }
 }

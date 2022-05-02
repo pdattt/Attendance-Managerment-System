@@ -66,7 +66,6 @@ namespace AttendanceManagementSystem
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add >>";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnRemove
             // 
@@ -77,7 +76,6 @@ namespace AttendanceManagementSystem
             this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "<<Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // AddAttendeeToEvent
             // 
@@ -90,6 +88,8 @@ namespace AttendanceManagementSystem
             this.Controls.Add(this.gridAvailableAttendee);
             this.Name = "AddAttendeeToEvent";
             this.Text = "AddAttendeeToEvent";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddAttendeeToEvent_FormClosed);
+            this.Load += new System.EventHandler(this.AddAttendeeToEvent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAvailableAttendee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendeeToJoin)).EndInit();
             this.ResumeLayout(false);

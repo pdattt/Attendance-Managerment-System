@@ -24,5 +24,22 @@ namespace AttendanceManagementSystem.BUS
 
             return attendees;
         }
+
+        public async Task<List<Attendee>> GetAvailableAttendee(string eventID)
+        {
+            List<Att_Eve> list = await new AttendeeListEventDAO().GetListByID(eventID);
+
+            List<Attendee> attendees = new List<Attendee>();
+            
+            foreach(Att_Eve item in list)
+            {
+                Attendee attendee = await new AttendeeDAO().GetByID(item.AttendeeID);
+
+                if (!list.Any(at => at.AttendeeID == attendee.AttendeeID))
+                    attendees.Add(attendee);
+            }
+
+            return attendees;
+            }
     }
 }

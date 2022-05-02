@@ -21,7 +21,7 @@ namespace DoAnLapTrinhA.DAO
             db = FirestoreDb.Create("attendancerfid-a6f84");
         }
 
-        public async ValueTask<List<Attendee>> GetAll()
+        public async ValueTask<List<Attendee>> GetAllAttendee()
         {
             listAttendee = new List<Attendee>();
 
