@@ -21,12 +21,18 @@ namespace AttendanceManagementSystem
         {
             InitializeComponent();
             eventID = ID;
+
+            attendeesToJoin = new List<Attendee>();
         }
 
         private async void AddAttendeeToEvent_Load(object sender, EventArgs e)
         {
             availableAttendees = await new AttendeeListEventBUS().GetAvailableAttendee(eventID);
-            gridAvailableAttendee.DataSource = availableAttendees;
+
+            if (availableAttendees != null) 
+            {
+                listAvailableAttendee.DataSource = availableAttendees;              
+            }
         }
 
         private void AddAttendeeToEvent_FormClosed(object sender, FormClosedEventArgs e)
@@ -34,6 +40,27 @@ namespace AttendanceManagementSystem
             AttendeeListInEvent attForm = new AttendeeListInEvent(eventID);
             attForm.Show();
             this.Hide();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if(availableAttendees.Count > 0)
+            {
+                string id = listAvailableAttendee.SelectedItems[0].ToString();
+
+                var attendee = availableAttendees.SingleOrDefault(att => att.AttendeeID == id);
+
+                if (attendee == null)
+                    return;
+
+                availableAttendees.RemoveAll(att => att.AttendeeID == id);
+                attendeesToJoin.Add(attendee);
+
+                gridAvailableAttendee.DataSource = availableAttendees;
+                gridAttendeeToJoin.DataSource = attendeesToJoin;
+            }
+
+            Refresh();
         }
     }
 }
