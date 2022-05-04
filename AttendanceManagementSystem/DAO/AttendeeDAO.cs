@@ -76,18 +76,30 @@ namespace DoAnLapTrinhA.DAO
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Attendee attendee = docsnap.ConvertTo<Attendee>();
-                Dictionary<String, object> map = new Dictionary<String, object>()
+                if (attendee != null)
                 {
-                    {"AttendeeID", newAttendee.AttendeeID},
-                    {"Name" , newAttendee.Name},
-                    {"Email", newAttendee.Email},
-                    {"CardID", newAttendee.CardID},
-                    {"Role", newAttendee.Role}
-                };
-                if (attendee.AttendeeID == newAttendee.AttendeeID)
-                {
-                    await docsnap.Reference.UpdateAsync(map);
+                    try
+                    {
+                        if (attendee.AttendeeID == newAttendee.AttendeeID)
+                        {
+                            Dictionary<String, object> map = new Dictionary<String, object>()
+                            {
+                                {"AttendeeID", newAttendee.AttendeeID},
+                                {"Name" , newAttendee.Name},
+                                {"Email", newAttendee.Email},
+                                {"CardID", newAttendee.CardID},
+                                {"Role", newAttendee.Role}
+                            };
+                            await docsnap.Reference.UpdateAsync(map);
+                        }
+                        return true;
+                    }
+                    catch
+                    { 
+                        return false;
+                    }
                 }
+                
             }
             return false;
         }
