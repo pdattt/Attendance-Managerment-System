@@ -100,5 +100,45 @@ namespace AttendanceManagementSystem.DAO
             }
             return null;
         }
+
+        public async ValueTask<bool> UpdateClass(Class newClass)
+        {
+            Query qref = db.Collection("Class");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Class cls = docsnap.ConvertTo<Class>();
+                if (cls != null)
+                {
+                    try
+                    {
+                        if (cls.ClassID == newClass.ClassID)
+                        {
+                            Dictionary<String, object> map = new Dictionary<String, object>()
+                            {
+                                {"ClassID", newClass.ClassID},
+                                {"ClassName" , newClass.ClassName},
+                                {"ClassDate", newClass.ClassDate},
+                                {"Location", newClass.Location},
+                                {"ClassStartTime", newClass.ClassStartTime},
+                                {"ClassEndTime", newClass.ClassEndTime},
+                                {"ClassDateStart", newClass.ClassDateStart},
+                                {"ClassDateEnd", newClass.ClassDateEnd},
+                                {"ClassDate", newClass.ClassDate}
+                            };
+                            await docsnap.Reference.UpdateAsync(map);
+                        }
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            return false;
+        }
     }
 }

@@ -61,10 +61,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(39, 50);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Location = new System.Drawing.Point(29, 41);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "<-";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -73,11 +72,10 @@
             // gridEventClass
             // 
             this.gridEventClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEventClass.Location = new System.Drawing.Point(162, 129);
-            this.gridEventClass.Margin = new System.Windows.Forms.Padding(4);
+            this.gridEventClass.Location = new System.Drawing.Point(122, 105);
             this.gridEventClass.Name = "gridEventClass";
             this.gridEventClass.RowHeadersWidth = 51;
-            this.gridEventClass.Size = new System.Drawing.Size(1310, 348);
+            this.gridEventClass.Size = new System.Drawing.Size(982, 283);
             this.gridEventClass.TabIndex = 1;
             this.gridEventClass.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridEventClass_RowHeaderMouseDoubleClick);
             this.gridEventClass.SelectionChanged += new System.EventHandler(this.gridEventClass_SelectionChanged);
@@ -86,10 +84,9 @@
             // 
             this.radioBtnEvent.AutoSize = true;
             this.radioBtnEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnEvent.Location = new System.Drawing.Point(39, 224);
-            this.radioBtnEvent.Margin = new System.Windows.Forms.Padding(4);
+            this.radioBtnEvent.Location = new System.Drawing.Point(29, 182);
             this.radioBtnEvent.Name = "radioBtnEvent";
-            this.radioBtnEvent.Size = new System.Drawing.Size(85, 24);
+            this.radioBtnEvent.Size = new System.Drawing.Size(73, 21);
             this.radioBtnEvent.TabIndex = 2;
             this.radioBtnEvent.TabStop = true;
             this.radioBtnEvent.Text = "Sự kiện";
@@ -101,10 +98,9 @@
             // 
             this.radioBtnClass.AutoSize = true;
             this.radioBtnClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnClass.Location = new System.Drawing.Point(39, 334);
-            this.radioBtnClass.Margin = new System.Windows.Forms.Padding(4);
+            this.radioBtnClass.Location = new System.Drawing.Point(29, 271);
             this.radioBtnClass.Name = "radioBtnClass";
-            this.radioBtnClass.Size = new System.Drawing.Size(90, 24);
+            this.radioBtnClass.Size = new System.Drawing.Size(77, 21);
             this.radioBtnClass.TabIndex = 3;
             this.radioBtnClass.TabStop = true;
             this.radioBtnClass.Text = "Lớp học";
@@ -116,10 +112,9 @@
             // 
             this.labelEvent.AutoSize = true;
             this.labelEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvent.Location = new System.Drawing.Point(876, 47);
-            this.labelEvent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEvent.Location = new System.Drawing.Point(657, 38);
             this.labelEvent.Name = "labelEvent";
-            this.labelEvent.Size = new System.Drawing.Size(198, 52);
+            this.labelEvent.Size = new System.Drawing.Size(154, 39);
             this.labelEvent.TabIndex = 4;
             this.labelEvent.Text = "SỰ KIỆN";
             // 
@@ -127,10 +122,9 @@
             // 
             this.labelClass.AutoSize = true;
             this.labelClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(876, 46);
-            this.labelClass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelClass.Location = new System.Drawing.Point(657, 37);
             this.labelClass.Name = "labelClass";
-            this.labelClass.Size = new System.Drawing.Size(220, 52);
+            this.labelClass.Size = new System.Drawing.Size(172, 39);
             this.labelClass.TabIndex = 5;
             this.labelClass.Text = "LỚP HỌC";
             // 
@@ -138,99 +132,89 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(663, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(497, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 52);
+            this.label1.Size = new System.Drawing.Size(168, 39);
             this.label1.TabIndex = 6;
             this.label1.Text = "QUẢN LÝ";
             // 
             // labelEventID
             // 
             this.labelEventID.AutoSize = true;
-            this.labelEventID.Location = new System.Drawing.Point(256, 539);
-            this.labelEventID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEventID.Location = new System.Drawing.Point(192, 438);
             this.labelEventID.Name = "labelEventID";
-            this.labelEventID.Size = new System.Drawing.Size(80, 17);
+            this.labelEventID.Size = new System.Drawing.Size(62, 13);
             this.labelEventID.TabIndex = 7;
             this.labelEventID.Text = "Mã sự kiện:";
             // 
             // labelEventName
             // 
             this.labelEventName.AutoSize = true;
-            this.labelEventName.Location = new System.Drawing.Point(256, 583);
-            this.labelEventName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEventName.Location = new System.Drawing.Point(192, 474);
             this.labelEventName.Name = "labelEventName";
-            this.labelEventName.Size = new System.Drawing.Size(86, 17);
+            this.labelEventName.Size = new System.Drawing.Size(66, 13);
             this.labelEventName.TabIndex = 8;
             this.labelEventName.Text = "Tên sự kiện:";
             // 
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(260, 630);
-            this.labelDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDate.Location = new System.Drawing.Point(195, 512);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(45, 17);
+            this.labelDate.Size = new System.Drawing.Size(35, 13);
             this.labelDate.TabIndex = 9;
             this.labelDate.Text = "Ngày:";
             // 
             // labelLocation
             // 
             this.labelLocation.AutoSize = true;
-            this.labelLocation.Location = new System.Drawing.Point(260, 673);
-            this.labelLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLocation.Location = new System.Drawing.Point(195, 547);
             this.labelLocation.Name = "labelLocation";
-            this.labelLocation.Size = new System.Drawing.Size(67, 17);
+            this.labelLocation.Size = new System.Drawing.Size(52, 13);
             this.labelLocation.TabIndex = 10;
             this.labelLocation.Text = "Địa điểm:";
             // 
             // labelStart
             // 
             this.labelStart.AutoSize = true;
-            this.labelStart.Location = new System.Drawing.Point(260, 722);
-            this.labelStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStart.Location = new System.Drawing.Point(195, 587);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(86, 17);
+            this.labelStart.Size = new System.Drawing.Size(66, 13);
             this.labelStart.TabIndex = 11;
             this.labelStart.Text = "Giờ bắt đầu:";
             // 
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
-            this.labelEnd.Location = new System.Drawing.Point(941, 544);
-            this.labelEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEnd.Location = new System.Drawing.Point(706, 442);
             this.labelEnd.Name = "labelEnd";
-            this.labelEnd.Size = new System.Drawing.Size(88, 17);
+            this.labelEnd.Size = new System.Drawing.Size(68, 13);
             this.labelEnd.TabIndex = 12;
             this.labelEnd.Text = "Giờ kết thúc:";
             // 
             // labelDateStart
             // 
             this.labelDateStart.AutoSize = true;
-            this.labelDateStart.Location = new System.Drawing.Point(941, 588);
-            this.labelDateStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateStart.Location = new System.Drawing.Point(706, 478);
             this.labelDateStart.Name = "labelDateStart";
-            this.labelDateStart.Size = new System.Drawing.Size(97, 17);
+            this.labelDateStart.Size = new System.Drawing.Size(75, 13);
             this.labelDateStart.TabIndex = 13;
             this.labelDateStart.Text = "Ngày bắt đầu:";
             // 
             // labelDateEnd
             // 
             this.labelDateEnd.AutoSize = true;
-            this.labelDateEnd.Location = new System.Drawing.Point(941, 635);
-            this.labelDateEnd.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDateEnd.Location = new System.Drawing.Point(706, 516);
             this.labelDateEnd.Name = "labelDateEnd";
-            this.labelDateEnd.Size = new System.Drawing.Size(99, 17);
+            this.labelDateEnd.Size = new System.Drawing.Size(77, 13);
             this.labelDateEnd.TabIndex = 14;
             this.labelDateEnd.Text = "Ngày kết thúc:";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(945, 719);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(709, 584);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 28);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -238,20 +222,19 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(1137, 719);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Location = new System.Drawing.Point(853, 584);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 17;
             this.btnUpdate.Text = "Chỉnh sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1322, 719);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Location = new System.Drawing.Point(992, 584);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -259,93 +242,83 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(400, 535);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtID.Location = new System.Drawing.Point(300, 435);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(292, 22);
+            this.txtID.Size = new System.Drawing.Size(220, 20);
             this.txtID.TabIndex = 19;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(400, 580);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.Location = new System.Drawing.Point(300, 471);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(292, 22);
+            this.txtName.Size = new System.Drawing.Size(220, 20);
             this.txtName.TabIndex = 20;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(400, 625);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDate.Location = new System.Drawing.Point(300, 508);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(292, 22);
+            this.txtDate.Size = new System.Drawing.Size(220, 20);
             this.txtDate.TabIndex = 21;
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(400, 670);
-            this.txtLocation.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLocation.Location = new System.Drawing.Point(300, 544);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(292, 22);
+            this.txtLocation.Size = new System.Drawing.Size(220, 20);
             this.txtLocation.TabIndex = 22;
             // 
             // txtStart
             // 
-            this.txtStart.Location = new System.Drawing.Point(400, 719);
-            this.txtStart.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStart.Location = new System.Drawing.Point(300, 584);
             this.txtStart.Name = "txtStart";
-            this.txtStart.Size = new System.Drawing.Size(292, 22);
+            this.txtStart.Size = new System.Drawing.Size(220, 20);
             this.txtStart.TabIndex = 23;
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(1093, 540);
-            this.txtEnd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEnd.Location = new System.Drawing.Point(820, 439);
             this.txtEnd.Name = "txtEnd";
-            this.txtEnd.Size = new System.Drawing.Size(328, 22);
+            this.txtEnd.Size = new System.Drawing.Size(247, 20);
             this.txtEnd.TabIndex = 24;
             // 
             // txtDateStart
             // 
-            this.txtDateStart.Location = new System.Drawing.Point(1093, 585);
-            this.txtDateStart.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDateStart.Location = new System.Drawing.Point(820, 475);
             this.txtDateStart.Name = "txtDateStart";
-            this.txtDateStart.Size = new System.Drawing.Size(328, 22);
+            this.txtDateStart.Size = new System.Drawing.Size(247, 20);
             this.txtDateStart.TabIndex = 25;
             // 
             // txtDateEnd
             // 
-            this.txtDateEnd.Location = new System.Drawing.Point(1093, 631);
-            this.txtDateEnd.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDateEnd.Location = new System.Drawing.Point(820, 513);
             this.txtDateEnd.Name = "txtDateEnd";
-            this.txtDateEnd.Size = new System.Drawing.Size(328, 22);
+            this.txtDateEnd.Size = new System.Drawing.Size(247, 20);
             this.txtDateEnd.TabIndex = 26;
             // 
             // labelClassID
             // 
             this.labelClassID.AutoSize = true;
-            this.labelClassID.Location = new System.Drawing.Point(260, 539);
-            this.labelClassID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelClassID.Location = new System.Drawing.Point(195, 438);
             this.labelClassID.Name = "labelClassID";
-            this.labelClassID.Size = new System.Drawing.Size(81, 17);
+            this.labelClassID.Size = new System.Drawing.Size(63, 13);
             this.labelClassID.TabIndex = 28;
             this.labelClassID.Text = "Mã lớp học:";
             // 
             // labelClassName
             // 
             this.labelClassName.AutoSize = true;
-            this.labelClassName.Location = new System.Drawing.Point(260, 582);
-            this.labelClassName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelClassName.Location = new System.Drawing.Point(195, 473);
             this.labelClassName.Name = "labelClassName";
-            this.labelClassName.Size = new System.Drawing.Size(87, 17);
+            this.labelClassName.Size = new System.Drawing.Size(67, 13);
             this.labelClassName.TabIndex = 29;
             this.labelClassName.Text = "Tên lớp học:";
             // 
             // EventClassManagementForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1797, 804);
+            this.ClientSize = new System.Drawing.Size(1348, 653);
             this.Controls.Add(this.labelClassName);
             this.Controls.Add(this.labelClassID);
             this.Controls.Add(this.txtDateEnd);
@@ -374,7 +347,6 @@
             this.Controls.Add(this.radioBtnEvent);
             this.Controls.Add(this.gridEventClass);
             this.Controls.Add(this.btnBack);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EventClassManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventClassManagementForm";

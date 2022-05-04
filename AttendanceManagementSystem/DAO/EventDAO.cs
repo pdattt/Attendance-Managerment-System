@@ -100,5 +100,42 @@ namespace AttendanceManagementSystem.DAO
             }
             return null;
         }
+
+        public async ValueTask<bool> UpdateEvent(Event newEvent)
+        {
+            Query qref = db.Collection("Event");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Event e = docsnap.ConvertTo<Event>();
+                if (e != null)
+                {
+                    try
+                    {
+                        if (e.EventID == newEvent.EventID)
+                        {
+                            Dictionary<String, object> map = new Dictionary<String, object>()
+                            {
+                                {"EventID", newEvent.EventID},
+                                {"EventName" , newEvent.EventName},
+                                {"EventDate", newEvent.EventDate},
+                                {"Location", newEvent.Location},
+                                {"EventStartTime", newEvent.EventStartTime},
+                                {"EventEndTime", newEvent.EventEndTime}
+                            };
+                            await docsnap.Reference.UpdateAsync(map);
+                        }
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+
+            }
+            return false;
+        }
     }
 }

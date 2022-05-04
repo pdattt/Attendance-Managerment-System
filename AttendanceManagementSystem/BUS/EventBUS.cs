@@ -44,5 +44,11 @@ namespace AttendanceManagementSystem.BUS
         {
             return new EventDAO().DeleteEventByID(id);
         }
+
+        public async ValueTask<bool> UpdateEvent(Event newEvent)
+        {
+            bool result = await new EventDAO().UpdateEvent(newEvent);
+            return result;
+        }
     }
 }

@@ -219,5 +219,54 @@ namespace AttendanceManagementSystem
             frm.Show();
             this.Enabled = false;
         }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (state == "Event")
+            {
+                Event newEvent = new Event()
+                {
+                    EventID = txtID.Text,
+                    EventName = txtName.Text,
+                    EventDate = txtDate.Text,
+                    EventEndTime = txtDateEnd.Text,
+                    EventStartTime = txtDateStart.Text,
+                    Location = txtLocation.Text,
+                };
+                bool result = await new EventBUS().UpdateEvent(newEvent);
+                if (result)
+                {
+                    MessageBox.Show("Thay Đổi Thành Công!!!!!!!!!!!");
+                    List<Event> listEvent = await new EventBUS().GetAllEvent();
+                    gridEventClass.DataSource = listEvent;
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi!!!!!!!!!");
+                }
+            }
+            else
+            {
+                Class cls = new Class(txtID.Text,
+                                      txtName.Text,
+                                      txtLocation.Text,
+                                      txtStart.Text,
+                                      txtEnd.Text,
+                                      txtDateStart.Text,
+                                      txtDateEnd.Text,
+                                      txtDate.Text);
+
+                bool result = await new ClassBUS().UpdateClass(cls);
+
+                if (result)
+                {
+                    MessageBox.Show("Thay Đổi Thành Công!!!!!!!!!!!");
+                    List<Class> listEvent = await new ClassBUS().GetAllClass();
+                    gridEventClass.DataSource = listEvent;
+                }
+                else
+                    MessageBox.Show("Có lỗi!!!!!!!!!");
+            }
+        }
     }
 }
