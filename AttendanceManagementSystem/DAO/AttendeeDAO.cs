@@ -78,12 +78,41 @@ namespace DoAnLapTrinhA.DAO
                 Attendee attendee = docsnap.ConvertTo<Attendee>();
                 if (attendee.AttendeeID == newAttendee.AttendeeID)
                 {
-                    attendee.Name = newAttendee.Name;
-                    attendee.Email = newAttendee.Email;
-                    attendee.CardID = newAttendee.CardID;
-                    attendee.Role = newAttendee.Role;
+                    Dictionary<string, object> map = new Dictionary<string, object>()
+                    {
+                        {attendee.Name , newAttendee.Name},
+                        {attendee.Email, newAttendee.Email},
+                        {attendee.CardID, newAttendee.CardID},
+                        {attendee.Role, newAttendee.Role}
+                    };
+                    await docsnap.Reference.UpdateAsync(map);
                 }
             }
+            return false;
+        }
+
+        public async Task<bool> DeleteAttendeeByID(string id)
+        {
+            Query qref = db.Collection("Attendee");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Attendee attendee = docsnap.ConvertTo<Attendee>();
+                if (attendee.AttendeeID == id)
+                {
+                    try
+                    {
+                        await docsnap.Reference.DeleteAsync();
+                        return true;
+                    }
+                    catch
+                    {
+                        return false;
+                    }
+                }
+            }
+
             return false;
         }
     }

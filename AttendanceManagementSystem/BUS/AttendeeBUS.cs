@@ -60,5 +60,10 @@ namespace AttendanceManagementSystem.BUS
 
             return false;
         }
+
+        public Task<bool> DeleteAttendeeByID(string id)
+        {
+            return new AttendeeDAO().DeleteAttendeeByID(id);
+        }
     }
 }

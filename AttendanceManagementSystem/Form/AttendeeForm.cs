@@ -96,6 +96,8 @@ namespace AttendanceManagementSystem
             if (result)
             {
                 MessageBox.Show("Thêm thành công!");
+                List<Attendee> listAttendee = await new AttendeeBUS().SelectAll();
+                gridAttendee.DataSource = listAttendee;
             }
             else
                 MessageBox.Show("Thêm thất bại!");
@@ -138,6 +140,32 @@ namespace AttendanceManagementSystem
             {
                 MessageBox.Show("Có lỗi!!!!!!!!!");
             }
+        }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (gridAttendee.SelectedRows.Count > 0)
+            {
+                string id = gridAttendee.SelectedCells[0].Value.ToString();
+                string message = "Mã: " + id;
+
+                var result = MessageBox.Show(message + "\nBạn có chắc chắn về việc xóa chứ?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                    return;
+
+                dynamic checkDelete;
+
+                checkDelete = await new AttendeeBUS().DeleteAttendeeByID(id);
+            
+                if (checkDelete)
+                {
+                    MessageBox.Show("Xoá thành công");
+                    Refresh();
+                    return;
+                }
+            }
+
+            MessageBox.Show("Xóa thất bại!");
         }
     }
 }

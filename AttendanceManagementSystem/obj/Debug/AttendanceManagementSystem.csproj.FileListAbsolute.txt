@@ -341,6 +341,7 @@ C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\ob
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.EventClassManagementForm.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.LoginForm.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.RegisterForm.resources
-C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.RFIDReader.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AddAttendeeToEvent.resources
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AttendeeListInEvent.resources
+C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AddAttendeeToEvent.resources
+C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AttendeeListInEvent.resources
