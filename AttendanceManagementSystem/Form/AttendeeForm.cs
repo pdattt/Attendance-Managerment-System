@@ -133,6 +133,7 @@ namespace AttendanceManagementSystem
             bool result = await new AttendeeBUS().UpdateAttendee(newAttendee);
             if (result)
             {
+                MessageBox.Show("Thay Đổi Thành Công!!!!!!!!!!!");
                 List<Attendee> listAttendee = await new AttendeeBUS().SelectAll();
                 gridAttendee.DataSource = listAttendee;
             }
