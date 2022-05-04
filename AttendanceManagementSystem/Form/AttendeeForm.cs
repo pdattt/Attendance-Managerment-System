@@ -160,8 +160,8 @@ namespace AttendanceManagementSystem
                 if (checkDelete)
                 {
                     MessageBox.Show("Xoá thành công");
-                    Refresh();
-                    return;
+                    List<Attendee> listAttendee = await new AttendeeBUS().SelectAll();
+                    gridAttendee.DataSource = listAttendee;
                 }
             }
 
