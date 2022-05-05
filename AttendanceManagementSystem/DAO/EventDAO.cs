@@ -109,31 +109,27 @@ namespace AttendanceManagementSystem.DAO
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Event e = docsnap.ConvertTo<Event>();
-                if (e != null)
+                try
                 {
-                    try
+                    if (e.EventID == newEvent.EventID)
                     {
-                        if (e.EventID == newEvent.EventID)
+                        Dictionary<String, object> map = new Dictionary<String, object>()
                         {
-                            Dictionary<String, object> map = new Dictionary<String, object>()
-                            {
-                                {"EventID", newEvent.EventID},
-                                {"EventName" , newEvent.EventName},
-                                {"EventDate", newEvent.EventDate},
-                                {"Location", newEvent.Location},
-                                {"EventStartTime", newEvent.EventStartTime},
-                                {"EventEndTime", newEvent.EventEndTime}
-                            };
-                            await docsnap.Reference.UpdateAsync(map);
-                        }
-                        return true;
+                            {"EventID", newEvent.EventID},
+                            {"EventName" , newEvent.EventName},
+                            {"EventDate", newEvent.EventDate},
+                            {"Location", newEvent.Location},
+                            {"EventStartTime", newEvent.EventStartTime},
+                            {"EventEndTime", newEvent.EventEndTime}
+                        };
+                        await docsnap.Reference.UpdateAsync(map);
                     }
-                    catch
-                    {
-                        return false;
-                    }
+                    return true;
                 }
-
+                catch
+                {
+                    return false;
+                }
             }
             return false;
         }

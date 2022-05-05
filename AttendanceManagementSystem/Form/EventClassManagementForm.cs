@@ -229,9 +229,9 @@ namespace AttendanceManagementSystem
                     EventID = txtID.Text,
                     EventName = txtName.Text,
                     EventDate = txtDate.Text,
-                    EventEndTime = txtDateEnd.Text,
-                    EventStartTime = txtDateStart.Text,
                     Location = txtLocation.Text,
+                    EventStartTime = txtStart.Text,
+                    EventEndTime = txtEnd.Text,
                 };
                 bool result = await new EventBUS().UpdateEvent(newEvent);
                 if (result)
@@ -247,14 +247,17 @@ namespace AttendanceManagementSystem
             }
             else
             {
-                Class cls = new Class(txtID.Text,
-                                      txtName.Text,
-                                      txtLocation.Text,
-                                      txtStart.Text,
-                                      txtEnd.Text,
-                                      txtDateStart.Text,
-                                      txtDateEnd.Text,
-                                      txtDate.Text);
+                Class cls = new Class()
+                {
+                    ClassID = txtID.Text,
+                    ClassName = txtName.Text,
+                    ClassDate = txtDate.Text,
+                    Location = txtLocation.Text,
+                    ClassStartTime = txtStart.Text,
+                    ClassEndTime = txtEnd.Text,
+                    ClassDateStart = txtDateStart.Text,
+                    ClassDateEnd = txtDateEnd.Text,
+                };
 
                 bool result = await new ClassBUS().UpdateClass(cls);
 

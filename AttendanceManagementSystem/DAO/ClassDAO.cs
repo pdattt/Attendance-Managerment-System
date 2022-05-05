@@ -124,8 +124,7 @@ namespace AttendanceManagementSystem.DAO
                                 {"ClassStartTime", newClass.ClassStartTime},
                                 {"ClassEndTime", newClass.ClassEndTime},
                                 {"ClassDateStart", newClass.ClassDateStart},
-                                {"ClassDateEnd", newClass.ClassDateEnd},
-                                {"ClassDate", newClass.ClassDate}
+                                {"ClassDateEnd", newClass.ClassDateEnd}
                             };
                             await docsnap.Reference.UpdateAsync(map);
                         }
