@@ -203,7 +203,15 @@ namespace AttendanceManagementSystem
                 if (checkDelete)
                 {
                     MessageBox.Show("Xoá thành công");
-                    Refresh();
+                    if(state == "Event")
+                    {
+                        List<Event> listEvent = await new EventBUS().GetAllEvent();
+                        gridEventClass.DataSource = listEvent;
+                    } else
+                    {
+                        List<Class> listEvent = await new ClassBUS().GetAllClass();
+                        gridEventClass.DataSource = listEvent;
+                    }
                     return;
                 }
             }
