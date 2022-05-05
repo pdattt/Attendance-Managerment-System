@@ -54,6 +54,7 @@ namespace AttendanceRFIDCheckIn
         {
             string in_data = Port.ReadLine().Replace("\r", "");
             Attendee attendee = await new AttendeeBUS().GetByCardID(in_data);
+            List<ObjectToReturn> objs = new List<ObjectToReturn>();
 
             if (attendee != null)
             {
@@ -65,13 +66,13 @@ namespace AttendanceRFIDCheckIn
                     DateTime.Now.ToString("HH:mm")
                 );
 
-                attendees.Add(objectToReturn);               
-                List<ObjectToReturn> obj = new List<ObjectToReturn>();
+                //attendees.Add(objectToReturn);               
 
-                obj = attendees;
-                gridCheckIn.DataSource = obj;
-                Refresh();
+                objs.Add(objectToReturn);
             }
+
+            gridCheckIn.DataSource = objs;
+
         }
 
         private void AttendeeCheckIn_Load(object sender, EventArgs e)
