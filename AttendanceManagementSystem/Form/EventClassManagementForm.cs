@@ -60,7 +60,6 @@ namespace AttendanceManagementSystem
             labelDateStart.Hide();
             txtDateEnd.Hide();
             txtDateStart.Hide();
-            txtID.Text = new EventBUS().GetRandom(5);
         }
 
         private void radioBtnClass_CheckedChanged(object sender, EventArgs e)
@@ -79,7 +78,6 @@ namespace AttendanceManagementSystem
             labelDateStart.Show();
             txtDateEnd.Show();
             txtDateStart.Show();
-            txtID.Text = new ClassBUS().GetRandomID(5);
         }
 
         private async void btnAdd_Click(object sender, EventArgs e)
@@ -133,12 +131,14 @@ namespace AttendanceManagementSystem
             List<Event> events = await new EventBUS().GetAllEvent();
             gridEventClass.DataSource = events;
             state = "Event";
+            txtID.Text = new EventBUS().GetRandom(5);
         }
         private async void radioBtnClass_Click(object sender, EventArgs e)
         {
             List<Class> classes = await new ClassBUS().GetAllClass();
             gridEventClass.DataSource = classes;
             state = "Class";
+            txtID.Text = new ClassBUS().GetRandomID(5);
         }
 
         private async void gridEventClass_SelectionChanged(object sender, EventArgs e)
