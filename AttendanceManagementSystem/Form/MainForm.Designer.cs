@@ -31,7 +31,6 @@
             this.btnExist = new System.Windows.Forms.Button();
             this.btnAttendee = new System.Windows.Forms.Button();
             this.btn = new System.Windows.Forms.Button();
-            this.btnRFID = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExist
@@ -64,21 +63,11 @@
             this.btn.UseVisualStyleBackColor = true;
             this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
-            // btnRFID
-            // 
-            this.btnRFID.Location = new System.Drawing.Point(485, 310);
-            this.btnRFID.Name = "btnRFID";
-            this.btnRFID.Size = new System.Drawing.Size(197, 54);
-            this.btnRFID.TabIndex = 3;
-            this.btnRFID.Text = "RFID Reader";
-            this.btnRFID.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 566);
-            this.Controls.Add(this.btnRFID);
             this.Controls.Add(this.btn);
             this.Controls.Add(this.btnAttendee);
             this.Controls.Add(this.btnExist);
@@ -94,7 +83,6 @@
         private System.Windows.Forms.Button btnExist;
         private System.Windows.Forms.Button btnAttendee;
         private System.Windows.Forms.Button btn;
-        private System.Windows.Forms.Button btnRFID;
     }
 }
 
