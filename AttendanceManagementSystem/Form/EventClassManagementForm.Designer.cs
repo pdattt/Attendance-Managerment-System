@@ -56,12 +56,15 @@
             this.txtDateEnd = new System.Windows.Forms.TextBox();
             this.labelClassID = new System.Windows.Forms.Label();
             this.labelClassName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridEventClass)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(29, 41);
+            this.btnBack.Location = new System.Drawing.Point(40, 50);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 0;
@@ -72,7 +75,7 @@
             // gridEventClass
             // 
             this.gridEventClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridEventClass.Location = new System.Drawing.Point(122, 105);
+            this.gridEventClass.Location = new System.Drawing.Point(208, 114);
             this.gridEventClass.Name = "gridEventClass";
             this.gridEventClass.RowHeadersWidth = 51;
             this.gridEventClass.Size = new System.Drawing.Size(982, 283);
@@ -84,7 +87,7 @@
             // 
             this.radioBtnEvent.AutoSize = true;
             this.radioBtnEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnEvent.Location = new System.Drawing.Point(29, 182);
+            this.radioBtnEvent.Location = new System.Drawing.Point(115, 191);
             this.radioBtnEvent.Name = "radioBtnEvent";
             this.radioBtnEvent.Size = new System.Drawing.Size(73, 21);
             this.radioBtnEvent.TabIndex = 2;
@@ -98,7 +101,7 @@
             // 
             this.radioBtnClass.AutoSize = true;
             this.radioBtnClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnClass.Location = new System.Drawing.Point(29, 271);
+            this.radioBtnClass.Location = new System.Drawing.Point(115, 280);
             this.radioBtnClass.Name = "radioBtnClass";
             this.radioBtnClass.Size = new System.Drawing.Size(77, 21);
             this.radioBtnClass.TabIndex = 3;
@@ -112,7 +115,7 @@
             // 
             this.labelEvent.AutoSize = true;
             this.labelEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEvent.Location = new System.Drawing.Point(657, 38);
+            this.labelEvent.Location = new System.Drawing.Point(688, 35);
             this.labelEvent.Name = "labelEvent";
             this.labelEvent.Size = new System.Drawing.Size(154, 39);
             this.labelEvent.TabIndex = 4;
@@ -122,7 +125,7 @@
             // 
             this.labelClass.AutoSize = true;
             this.labelClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClass.Location = new System.Drawing.Point(657, 37);
+            this.labelClass.Location = new System.Drawing.Point(688, 34);
             this.labelClass.Name = "labelClass";
             this.labelClass.Size = new System.Drawing.Size(172, 39);
             this.labelClass.TabIndex = 5;
@@ -132,7 +135,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(497, 38);
+            this.label1.Location = new System.Drawing.Point(528, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 39);
             this.label1.TabIndex = 6;
@@ -141,7 +144,7 @@
             // labelEventID
             // 
             this.labelEventID.AutoSize = true;
-            this.labelEventID.Location = new System.Drawing.Point(192, 438);
+            this.labelEventID.Location = new System.Drawing.Point(278, 447);
             this.labelEventID.Name = "labelEventID";
             this.labelEventID.Size = new System.Drawing.Size(62, 13);
             this.labelEventID.TabIndex = 7;
@@ -150,7 +153,7 @@
             // labelEventName
             // 
             this.labelEventName.AutoSize = true;
-            this.labelEventName.Location = new System.Drawing.Point(192, 474);
+            this.labelEventName.Location = new System.Drawing.Point(278, 483);
             this.labelEventName.Name = "labelEventName";
             this.labelEventName.Size = new System.Drawing.Size(66, 13);
             this.labelEventName.TabIndex = 8;
@@ -159,7 +162,7 @@
             // labelDate
             // 
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(195, 512);
+            this.labelDate.Location = new System.Drawing.Point(281, 521);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(35, 13);
             this.labelDate.TabIndex = 9;
@@ -168,7 +171,7 @@
             // labelLocation
             // 
             this.labelLocation.AutoSize = true;
-            this.labelLocation.Location = new System.Drawing.Point(195, 547);
+            this.labelLocation.Location = new System.Drawing.Point(281, 556);
             this.labelLocation.Name = "labelLocation";
             this.labelLocation.Size = new System.Drawing.Size(52, 13);
             this.labelLocation.TabIndex = 10;
@@ -177,7 +180,7 @@
             // labelStart
             // 
             this.labelStart.AutoSize = true;
-            this.labelStart.Location = new System.Drawing.Point(195, 587);
+            this.labelStart.Location = new System.Drawing.Point(281, 596);
             this.labelStart.Name = "labelStart";
             this.labelStart.Size = new System.Drawing.Size(66, 13);
             this.labelStart.TabIndex = 11;
@@ -186,7 +189,7 @@
             // labelEnd
             // 
             this.labelEnd.AutoSize = true;
-            this.labelEnd.Location = new System.Drawing.Point(706, 442);
+            this.labelEnd.Location = new System.Drawing.Point(792, 451);
             this.labelEnd.Name = "labelEnd";
             this.labelEnd.Size = new System.Drawing.Size(68, 13);
             this.labelEnd.TabIndex = 12;
@@ -195,7 +198,7 @@
             // labelDateStart
             // 
             this.labelDateStart.AutoSize = true;
-            this.labelDateStart.Location = new System.Drawing.Point(706, 478);
+            this.labelDateStart.Location = new System.Drawing.Point(792, 487);
             this.labelDateStart.Name = "labelDateStart";
             this.labelDateStart.Size = new System.Drawing.Size(75, 13);
             this.labelDateStart.TabIndex = 13;
@@ -204,7 +207,7 @@
             // labelDateEnd
             // 
             this.labelDateEnd.AutoSize = true;
-            this.labelDateEnd.Location = new System.Drawing.Point(706, 516);
+            this.labelDateEnd.Location = new System.Drawing.Point(792, 525);
             this.labelDateEnd.Name = "labelDateEnd";
             this.labelDateEnd.Size = new System.Drawing.Size(77, 13);
             this.labelDateEnd.TabIndex = 14;
@@ -212,7 +215,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(709, 584);
+            this.btnAdd.Location = new System.Drawing.Point(795, 593);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 16;
@@ -222,7 +225,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(853, 584);
+            this.btnUpdate.Location = new System.Drawing.Point(939, 593);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 17;
@@ -232,7 +235,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(992, 584);
+            this.btnDelete.Location = new System.Drawing.Point(1078, 593);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 18;
@@ -242,56 +245,56 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(300, 435);
+            this.txtID.Location = new System.Drawing.Point(386, 444);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(220, 20);
             this.txtID.TabIndex = 19;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(300, 471);
+            this.txtName.Location = new System.Drawing.Point(386, 480);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(220, 20);
             this.txtName.TabIndex = 20;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(300, 508);
+            this.txtDate.Location = new System.Drawing.Point(386, 517);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(220, 20);
             this.txtDate.TabIndex = 21;
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(300, 544);
+            this.txtLocation.Location = new System.Drawing.Point(386, 553);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(220, 20);
             this.txtLocation.TabIndex = 22;
             // 
             // txtStart
             // 
-            this.txtStart.Location = new System.Drawing.Point(300, 584);
+            this.txtStart.Location = new System.Drawing.Point(386, 593);
             this.txtStart.Name = "txtStart";
             this.txtStart.Size = new System.Drawing.Size(220, 20);
             this.txtStart.TabIndex = 23;
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(820, 439);
+            this.txtEnd.Location = new System.Drawing.Point(906, 448);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(247, 20);
             this.txtEnd.TabIndex = 24;
             // 
             // txtDateStart
             // 
-            this.txtDateStart.Location = new System.Drawing.Point(820, 475);
+            this.txtDateStart.Location = new System.Drawing.Point(906, 484);
             this.txtDateStart.Name = "txtDateStart";
             this.txtDateStart.Size = new System.Drawing.Size(247, 20);
             this.txtDateStart.TabIndex = 25;
             // 
             // txtDateEnd
             // 
-            this.txtDateEnd.Location = new System.Drawing.Point(820, 513);
+            this.txtDateEnd.Location = new System.Drawing.Point(906, 522);
             this.txtDateEnd.Name = "txtDateEnd";
             this.txtDateEnd.Size = new System.Drawing.Size(247, 20);
             this.txtDateEnd.TabIndex = 26;
@@ -299,7 +302,7 @@
             // labelClassID
             // 
             this.labelClassID.AutoSize = true;
-            this.labelClassID.Location = new System.Drawing.Point(195, 438);
+            this.labelClassID.Location = new System.Drawing.Point(281, 447);
             this.labelClassID.Name = "labelClassID";
             this.labelClassID.Size = new System.Drawing.Size(63, 13);
             this.labelClassID.TabIndex = 28;
@@ -308,17 +311,46 @@
             // labelClassName
             // 
             this.labelClassName.AutoSize = true;
-            this.labelClassName.Location = new System.Drawing.Point(195, 473);
+            this.labelClassName.Location = new System.Drawing.Point(281, 482);
             this.labelClassName.Name = "labelClassName";
             this.labelClassName.Size = new System.Drawing.Size(67, 13);
             this.labelClassName.TabIndex = 29;
             this.labelClassName.Text = "Tên lớp học:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(241, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Tìm kiếm:";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(338, 86);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(722, 20);
+            this.txtSearch.TabIndex = 31;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(1096, 84);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 32;
+            this.btnSearch.Text = "Tìm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // EventClassManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 653);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.labelClassName);
             this.Controls.Add(this.labelClassID);
             this.Controls.Add(this.txtDateEnd);
@@ -387,5 +419,8 @@
         private System.Windows.Forms.TextBox txtDateEnd;
         private System.Windows.Forms.Label labelClassID;
         private System.Windows.Forms.Label labelClassName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

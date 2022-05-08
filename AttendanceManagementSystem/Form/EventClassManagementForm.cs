@@ -279,5 +279,12 @@ namespace AttendanceManagementSystem
                     MessageBox.Show("Có lỗi!!!!!!!!!");
             }
         }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+           string keyWord = txtSearch.Text.Trim();
+            List<Event> listEvent = await new EventBUS().SelectByKeyWord(keyWord);
+            gridEventClass.DataSource=listEvent;
+        }
     }
 }

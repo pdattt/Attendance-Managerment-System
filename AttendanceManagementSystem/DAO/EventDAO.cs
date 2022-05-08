@@ -133,5 +133,23 @@ namespace AttendanceManagementSystem.DAO
             }
             return false;
         }
+
+        public async ValueTask<List<Event>> SelectByKeyWord(string Name)
+        {
+            listEvent = new List<Event>();
+
+            Query qref = db.Collection("Event");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Event events = docsnap.ConvertTo<Event>();
+                if(events.EventName == Name)
+                {
+                    listEvent.Add(events);
+                }
+            }
+            return listEvent;
+        }
     }
 }

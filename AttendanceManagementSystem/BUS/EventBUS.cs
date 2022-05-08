@@ -50,5 +50,11 @@ namespace AttendanceManagementSystem.BUS
             bool result = await new EventDAO().UpdateEvent(newEvent);
             return result;
         }
+
+        public async ValueTask<List<Event>> SelectByKeyWord(string Name)
+        {
+            List<Event> listEvent = await new EventDAO().SelectByKeyWord(Name);
+            return listEvent;
+        }
     }
 }
