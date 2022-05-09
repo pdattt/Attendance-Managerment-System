@@ -144,7 +144,7 @@ namespace AttendanceManagementSystem.DAO
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Event events = docsnap.ConvertTo<Event>();
-                if(events.EventName == Name)
+                if(events.EventName.Trim().ToUpper().Contains(Name.Trim().ToUpper()))
                 {
                     listEvent.Add(events);
                 }
