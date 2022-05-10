@@ -139,5 +139,23 @@ namespace AttendanceManagementSystem.DAO
             }
             return false;
         }
+
+        public async ValueTask<List<Class>> SelectByKeyWord(string Name)
+        {
+            listClass = new List<Class>();
+
+            Query qref = db.Collection("Class");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Class classes = docsnap.ConvertTo<Class>();
+                if (classes.ClassName.Trim().ToUpper().Contains(Name.Trim().ToUpper()))
+                {
+                    listClass.Add(classes);
+                }
+            }
+            return listClass;
+        }
     }
 }

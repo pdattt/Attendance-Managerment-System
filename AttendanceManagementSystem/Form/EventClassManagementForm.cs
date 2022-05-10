@@ -283,8 +283,16 @@ namespace AttendanceManagementSystem
         private async void btnSearch_Click(object sender, EventArgs e)
         {
            string keyWord = txtSearch.Text.Trim();
-            List<Event> listEvent = await new EventBUS().SelectByKeyWord(keyWord);
-            gridEventClass.DataSource=listEvent;
+            if(state == "Event")
+            {
+                List<Event> listEvent = await new EventBUS().SelectByKeyWord(keyWord);
+                gridEventClass.DataSource = listEvent;
+            }
+            else
+            {
+                List<Class> listClass = await new ClassBUS().SelectByKeyWord(keyWord);
+                gridEventClass.DataSource = listClass;
+            }
         }
     }
 }

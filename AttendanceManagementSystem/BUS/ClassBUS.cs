@@ -48,5 +48,11 @@ namespace AttendanceManagementSystem.BUS
             bool result = await new ClassDAO().UpdateClass(newClass);
             return result;
         }
+
+        public async ValueTask<List<Class>> SelectByKeyWord(string Name)
+        {
+            List<Class> listClass = await new ClassDAO().SelectByKeyWord(Name);
+            return listClass;
+        }
     }
 }
