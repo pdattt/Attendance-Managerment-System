@@ -31,7 +31,7 @@ namespace AttendanceManagementSystem
 
             if (availableAttendees != null) 
             {
-                listAvailableAttendee.DataSource = availableAttendees;              
+                listAvailableAttendee.DataSource = availableAttendees.Select(x =>x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();              
             }
         }
 
@@ -46,21 +46,63 @@ namespace AttendanceManagementSystem
         {
             if(availableAttendees.Count > 0)
             {
-                string id = listAvailableAttendee.SelectedItems[0].ToString();
+                string attendeeItem = listAvailableAttendee.SelectedItems[0].ToString();
 
-                var attendee = availableAttendees.SingleOrDefault(att => att.AttendeeID == id);
+                string id = attendeeItem.Substring(0, attendeeItem.IndexOf("\t"));
 
-                if (attendee == null)
-                    return;
+                Attendee attendee = availableAttendees.SingleOrDefault(att => att.AttendeeID == id);
 
-                availableAttendees.RemoveAll(att => att.AttendeeID == id);
                 attendeesToJoin.Add(attendee);
+                availableAttendees.Remove(attendee);
 
-                gridAvailableAttendee.DataSource = availableAttendees;
-                gridAttendeeToJoin.DataSource = attendeesToJoin;
+
+                listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
+                listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
             }
+        }
 
-            Refresh();
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (attendeesToJoin.Count > 0)
+            {
+                string attendeeItem = listAttendeeToJoin.SelectedItems[0].ToString();
+
+                string id = attendeeItem.Substring(0, attendeeItem.IndexOf("\t"));
+
+                Attendee attendee = attendeesToJoin.SingleOrDefault(att => att.AttendeeID == id);
+
+                attendeesToJoin.Remove(attendee);
+                availableAttendees.Add(attendee);
+
+
+                listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
+                listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
+            }
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            bool addCheck = new AttendeeListEventBUS().AddAttendeeToEvent(eventID, attendeesToJoin);
+
+            if (addCheck)
+            {
+                MessageBox.Show("Thêm thành công!");
+                attendeesToJoin = null;
+            }
+            else
+                MessageBox.Show("Thêm thất bại!");
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc chắn về việc hủy thay đổi chứ?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+                return;
+
+            AttendeeListInEvent attForm = new AttendeeListInEvent(eventID);
+            attForm.Show();
+            this.Hide();
         }
     }
 }

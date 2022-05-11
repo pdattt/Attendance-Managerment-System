@@ -43,5 +43,29 @@ namespace AttendanceManagementSystem
             addForm.Show();
             this.Hide();
         }
+
+        private async void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (gridAttendance.SelectedRows.Count > 0)
+            {
+                string attendeeId = gridAttendance.SelectedCells[0].Value.ToString();
+                string message = "Mã: " + attendeeId;
+
+                var result = MessageBox.Show(message + "\nBạn có chắc chắn về việc xóa chứ?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                    return;
+
+                bool checkDelete = await new AttendeeListEventBUS().DeleteAttendeeFromEvent(eventID, attendeeId);
+
+                if (checkDelete)
+                {
+                    MessageBox.Show("Xóa thành công!");
+                    attendees = await new AttendeeListEventBUS().GetAllAttendeeByEvent(eventID);
+                    gridAttendance.DataSource = attendees;
+                }
+                else
+                    MessageBox.Show("Xóa thất bại!");
+            }
+        }
     }
 }

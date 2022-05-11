@@ -29,6 +29,7 @@ namespace AttendanceManagementSystem.BUS
         {
             List<Att_Eve> list = await new AttendeeListEventDAO().GetListByID(eventID);
             List<Attendee> attendees = await new AttendeeDAO().GetAllAttendee();
+
             List<Attendee> availableAttendees = new List<Attendee>();
             
             foreach(Attendee item in attendees)
@@ -41,6 +42,27 @@ namespace AttendanceManagementSystem.BUS
             }
 
             return availableAttendees;
+        }
+        public bool AddAttendeeToEvent(string eventID, List<Attendee> attendees)
+        {
+            foreach(Attendee attendee in attendees)
+            {
+                bool addCheck = new AttendeeListEventDAO().AddAttendee(eventID, attendee.AttendeeID);
+
+                if (!addCheck)
+                    return false;
             }
+
+            return true;
+        }
+
+        public async Task<bool> DeleteAttendeeFromEvent(string eventID, string attendeeID)
+        {
+            bool deleteCheck = await new AttendeeListEventDAO().DeleteAttendeeFromEvent(eventID, attendeeID);
+
+            if (deleteCheck)
+                return true;
+            return false;
+        }
     }
 }
