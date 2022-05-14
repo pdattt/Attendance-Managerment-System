@@ -2,16 +2,14 @@
 using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DoAnLapTrinhA.DAO
 {
     public class AttendeeDAO
     {
-        FirestoreDb db;
-        List<Attendee> listAttendee;
+        private FirestoreDb db;
+        private List<Attendee> listAttendee;
 
         public AttendeeDAO()
         {
@@ -95,11 +93,10 @@ namespace DoAnLapTrinhA.DAO
                         return true;
                     }
                     catch
-                    { 
+                    {
                         return false;
                     }
                 }
-                
             }
             return false;
         }

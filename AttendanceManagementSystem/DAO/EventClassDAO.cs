@@ -2,16 +2,14 @@
 using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.DAO
 {
     public class EventClassDAO
     {
-        FirestoreDb db;
-        List<dynamic> listEvent;
+        private FirestoreDb db;
+        private List<dynamic> listEvent;
 
         public EventClassDAO()
         {
@@ -53,7 +51,7 @@ namespace AttendanceManagementSystem.DAO
                     {"EventEndTime", eve_cls.EventEndTime}
                 };
             }
-            else 
+            else
             {
                 map = new Dictionary<string, object>()
                 {
@@ -88,7 +86,7 @@ namespace AttendanceManagementSystem.DAO
             {
                 dynamic eve_cls;
 
-                if(state == "Event")
+                if (state == "Event")
                     eve_cls = docsnap.ConvertTo<Event>();
                 else
                     eve_cls = docsnap.ConvertTo<Class>();

@@ -2,8 +2,6 @@
 using AttendanceManagementSystem.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.BUS
@@ -25,7 +23,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async ValueTask<List<Event>> GetAllEvent()
         {
-            List<Event> listEvent= await new EventDAO().GetAll();
+            List<Event> listEvent = await new EventDAO().GetAll();
             return listEvent;
         }
 

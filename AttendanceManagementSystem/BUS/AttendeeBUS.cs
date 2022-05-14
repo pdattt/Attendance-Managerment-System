@@ -1,10 +1,7 @@
 ﻿using DoAnLapTrinhA.DAO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AttendanceManagementSystem.BUS
 {
@@ -23,10 +20,9 @@ namespace AttendanceManagementSystem.BUS
             return randomID;
         }
 
-        public async ValueTask<bool> AddNewAttendee(Attendee attendee) { 
+        public async ValueTask<bool> AddNewAttendee(Attendee attendee)
+        {
             List<Attendee> listAttendee = await new AttendeeDAO().GetAllAttendee();
-
-
 
             new AttendeeDAO().AddNewAttendee(attendee);
             return true;
@@ -40,7 +36,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async ValueTask<Attendee> GetDetails(string id)
         {
-            Attendee attendee = await new AttendeeDAO().GetByID(id);    
+            Attendee attendee = await new AttendeeDAO().GetByID(id);
             return attendee;
         }
 
@@ -52,7 +48,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async Task<bool> CheckCardIDExist(string ID)
         {
-            List<Attendee> attendees= await new AttendeeDAO().GetAllAttendee();
+            List<Attendee> attendees = await new AttendeeDAO().GetAllAttendee();
 
             foreach (Attendee attendee in attendees)
                 if (attendee.CardID == ID)

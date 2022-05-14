@@ -1,10 +1,8 @@
 ﻿using AttendanceManagementSystem.DAO;
 using AttendanceManagementSystem.Model;
 using DoAnLapTrinhA.DAO;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.BUS
@@ -16,7 +14,7 @@ namespace AttendanceManagementSystem.BUS
             List<Att_Eve> list = await new AttendeeListEventDAO().GetListByID(eventID);
             List<Attendee> attendees = new List<Attendee>();
 
-            foreach(Att_Eve item in list)
+            foreach (Att_Eve item in list)
             {
                 Attendee attendee = await new AttendeeDAO().GetByID(item.AttendeeID);
                 attendees.Add(attendee);
@@ -31,8 +29,8 @@ namespace AttendanceManagementSystem.BUS
             List<Attendee> attendees = await new AttendeeDAO().GetAllAttendee();
 
             List<Attendee> availableAttendees = new List<Attendee>();
-            
-            foreach(Attendee item in attendees)
+
+            foreach (Attendee item in attendees)
             {
                 if (!list.Any(att => att.AttendeeID == item.AttendeeID))
                 {
@@ -43,9 +41,10 @@ namespace AttendanceManagementSystem.BUS
 
             return availableAttendees;
         }
+
         public bool AddAttendeeToEvent(string eventID, List<Attendee> attendees)
         {
-            foreach(Attendee attendee in attendees)
+            foreach (Attendee attendee in attendees)
             {
                 bool addCheck = new AttendeeListEventDAO().AddAttendee(eventID, attendee.AttendeeID);
 

@@ -2,15 +2,13 @@
 using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.DAO
 {
     public class AttendeeListEventDAO
     {
-        FirestoreDb db;
+        private FirestoreDb db;
 
         public AttendeeListEventDAO()
         {
@@ -30,7 +28,7 @@ namespace AttendanceManagementSystem.DAO
             {
                 Att_Eve item = docsnap.ConvertTo<Att_Eve>();
 
-                if(item.EventID == ID)
+                if (item.EventID == ID)
                     list.Add(item);
             }
             return list;

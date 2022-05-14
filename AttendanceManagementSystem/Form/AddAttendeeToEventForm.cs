@@ -1,21 +1,17 @@
 ﻿using AttendanceManagementSystem.BUS;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AttendanceManagementSystem
 {
     public partial class AddAttendeeToEvent : Form
     {
-        string eventID;
-        List<Attendee> availableAttendees;
-        List<Attendee> attendeesToJoin;
+        private string eventID;
+        private List<Attendee> availableAttendees;
+        private List<Attendee> attendeesToJoin;
 
         public AddAttendeeToEvent(string ID)
         {
@@ -29,9 +25,9 @@ namespace AttendanceManagementSystem
         {
             availableAttendees = await new AttendeeListEventBUS().GetAvailableAttendee(eventID);
 
-            if (availableAttendees != null) 
+            if (availableAttendees != null)
             {
-                listAvailableAttendee.DataSource = availableAttendees.Select(x =>x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();              
+                listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
             }
         }
 
@@ -44,7 +40,7 @@ namespace AttendanceManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(availableAttendees.Count > 0)
+            if (availableAttendees.Count > 0)
             {
                 string attendeeItem = listAvailableAttendee.SelectedItems[0].ToString();
 
@@ -54,7 +50,6 @@ namespace AttendanceManagementSystem
 
                 attendeesToJoin.Add(attendee);
                 availableAttendees.Remove(attendee);
-
 
                 listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
                 listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
@@ -73,7 +68,6 @@ namespace AttendanceManagementSystem
 
                 attendeesToJoin.Remove(attendee);
                 availableAttendees.Add(attendee);
-
 
                 listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
                 listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();

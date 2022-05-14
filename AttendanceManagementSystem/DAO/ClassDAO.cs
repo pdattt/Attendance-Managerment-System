@@ -2,16 +2,14 @@
 using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.DAO
 {
     public class ClassDAO
     {
-        FirestoreDb db;
-        List<Class> listClass;
+        private FirestoreDb db;
+        private List<Class> listClass;
 
         public ClassDAO()
         {
@@ -52,7 +50,8 @@ namespace AttendanceManagementSystem.DAO
                 {"ClassDateEnd", cls.ClassDateEnd}
             };
 
-            try {
+            try
+            {
                 coll.AddAsync(map);
                 return true;
             }
@@ -135,7 +134,6 @@ namespace AttendanceManagementSystem.DAO
                         return false;
                     }
                 }
-
             }
             return false;
         }

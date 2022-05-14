@@ -2,16 +2,14 @@
 using Google.Cloud.Firestore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.DAO
 {
     public class EventDAO
     {
-        FirestoreDb db;
-        List<Event> listEvent;
+        private FirestoreDb db;
+        private List<Event> listEvent;
 
         public EventDAO()
         {
@@ -50,7 +48,8 @@ namespace AttendanceManagementSystem.DAO
                 {"EventEndTime", e.EventEndTime}
             };
 
-            try {
+            try
+            {
                 coll.AddAsync(map);
                 return true;
             }
@@ -144,7 +143,7 @@ namespace AttendanceManagementSystem.DAO
             foreach (DocumentSnapshot docsnap in snap)
             {
                 Event events = docsnap.ConvertTo<Event>();
-                if(events.EventName.Trim().ToUpper().Contains(Name.Trim().ToUpper()))
+                if (events.EventName.Trim().ToUpper().Contains(Name.Trim().ToUpper()))
                 {
                     listEvent.Add(events);
                 }

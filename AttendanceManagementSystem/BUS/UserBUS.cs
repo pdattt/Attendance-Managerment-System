@@ -2,10 +2,7 @@
 using DoAnLapTrinhA.DAO;
 using DoAnLapTrinhA.DTO;
 using DoAnLapTrinhA.Encryption;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DoAnLapTrinhA.BUS
@@ -16,7 +13,7 @@ namespace DoAnLapTrinhA.BUS
         {
             List<User> listUser = await new UserDAO().GetAll();
 
-            foreach(User user in listUser)
+            foreach (User user in listUser)
             {
                 if (user.Email == EncryptorMD5.MD5Hash(userLogin.Email))
                 {
