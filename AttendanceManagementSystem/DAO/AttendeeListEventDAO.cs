@@ -73,7 +73,8 @@ namespace AttendanceManagementSystem.DAO
                         Dictionary<string, string> map = new Dictionary<string, string>()
                         {
                             {"Date", session.Date},
-                            {"Time", session.Time},
+                            {"DayOfWeek", session.DayOfWeek},
+                            {"Time", session.Time}
                         };
 
                         await coll.AddAsync(map);

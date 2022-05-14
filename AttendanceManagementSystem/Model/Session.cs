@@ -9,6 +9,7 @@ namespace AttendanceManagementSystem.Model
     public class Session
     {
         public string Date { get; set; } = "";
+        public string DayOfWeek { get; set; } = "";
         public string Time { get; set; } = "";
     }
 }

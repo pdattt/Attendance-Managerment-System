@@ -92,18 +92,19 @@ namespace AttendanceManagementSystem.BUS
 
                 DateTime startDate = DateTime.Parse(cl.ClassDateStart);
                 DateTime endDate = DateTime.Parse(cl.ClassDateEnd);
+                List<string> classDays = cl.ClassDate.Split(',').ToList();
 
                 for (DateTime date = startDate; date <= endDate; date = date.AddDays(1.0))
                 {
                     string day = date.ToString("dddd");
-                    List<string> classDays = cl.ClassDate.Trim().Split(',').ToList();
 
-                    bool checkDay = classDays.Contains(dayOfWeek[day]);
+                    bool checkDay = classDays.Select(d => d.Trim()).Contains(dayOfWeek[day]);
 
                     if (checkDay)
                     {
                         Session addSession = new Session();
-                        addSession.Date = date.ToString("D");
+                        addSession.Date = date.ToString("d");
+                        addSession.DayOfWeek = date.ToString("dddd");
 
                         sessions.Add(addSession);
                     }
