@@ -85,7 +85,7 @@ namespace AttendanceManagementSystem.DAO
 
         public async Task<bool> DeleteAttendeeFromEvent(string eventID, string attendeeID)
         {
-            Query qref = db.Collection("Att_Eve");
+            var qref = db.Collection("Att_Eve");
             QuerySnapshot snap = await qref.GetSnapshotAsync();
 
             foreach (DocumentSnapshot docsnap in snap)
@@ -94,7 +94,20 @@ namespace AttendanceManagementSystem.DAO
 
                 if (att_eve.AttendeeID.ToString() == attendeeID && att_eve.EventID == eventID)
                 {
+                    CollectionReference subQref = qref.Document(docsnap.Id.ToString()).Collection("Sessions");
+                    QuerySnapshot subSnap = await subQref.GetSnapshotAsync();
+
+                    foreach (DocumentSnapshot subDoc in subSnap)
+                    {
+                        await subDoc.Reference.DeleteAsync();
+                    }
+
                     await docsnap.Reference.DeleteAsync();
+
+                    //await db.Collection("Att_Eve").Document().DeleteAsync();
+                    //foreach (DocumentSnapshot subDocsnap in docsnap)
+                    //await db.Collection("Att_Eve").Document(docsnap.Id.ToString()).Collection("Sessions").Document().DeleteAsync();
+
                     return true;
                 }
             }

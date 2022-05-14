@@ -10,14 +10,17 @@ namespace AttendanceManagementSystem.Model
     [FirestoreData]
     public class Att_Eve
     {
-
         [FirestoreProperty]
         public string EventID { get; set; }
 
         [FirestoreProperty]
         public string AttendeeID { get; set; }
 
-        public Att_Eve() { }
+        [FirestoreProperty]
+        public List<Session> Sessions { get; set; }
+
+        public Att_Eve()
+        { }
 
         public Att_Eve(string eventID, string attendeeID)
         {
