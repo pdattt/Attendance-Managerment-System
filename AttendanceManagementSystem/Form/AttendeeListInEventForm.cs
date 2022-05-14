@@ -13,13 +13,13 @@ namespace AttendanceManagementSystem
 {
     public partial class AttendeeListInEvent : Form
     {
-        string eventID;
-        List<Attendee> attendees;
+        private string eventID;
+        private List<Attendee> attendees;
 
         public AttendeeListInEvent(string id)
         {
             InitializeComponent();
-            eventID = id;
+            this.eventID = id;
         }
 
         private async void AttendeeListInEvent_Load(object sender, EventArgs e)

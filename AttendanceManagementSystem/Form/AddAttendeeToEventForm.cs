@@ -74,14 +74,15 @@ namespace AttendanceManagementSystem
             }
         }
 
-        private void btnApply_Click(object sender, EventArgs e)
+        private async void btnApply_Click(object sender, EventArgs e)
         {
-            bool addCheck = new AttendeeListEventBUS().AddAttendeeToEvent(eventID, attendeesToJoin);
+            bool addCheck = await new AttendeeListEventBUS().AddAttendeeToEvent(eventID, attendeesToJoin);
 
             if (addCheck)
             {
                 MessageBox.Show("Thêm thành công!");
                 attendeesToJoin = null;
+                listAttendeeToJoin.DataSource = attendeesToJoin;
             }
             else
                 MessageBox.Show("Thêm thất bại!");

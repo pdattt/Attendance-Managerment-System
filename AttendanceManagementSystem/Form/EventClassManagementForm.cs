@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem
 {
     public partial class EventClassManagementForm : Form
     {
-        string state = "";
+        private string state = "";
 
         public EventClassManagementForm()
         {
@@ -84,7 +84,7 @@ namespace AttendanceManagementSystem
         {
             if (state == "Event")
             {
-                Event eve = new Event(txtID.Text, 
+                Event eve = new Event(txtID.Text,
                                       txtName.Text,
                                       txtDate.Text,
                                       txtLocation.Text,
@@ -133,6 +133,7 @@ namespace AttendanceManagementSystem
             state = "Event";
             txtID.Text = new EventBUS().GetRandom(5);
         }
+
         private async void radioBtnClass_Click(object sender, EventArgs e)
         {
             List<Class> classes = await new ClassBUS().GetAllClass();
@@ -167,7 +168,8 @@ namespace AttendanceManagementSystem
                     txtStart.Text = eve.EventStartTime;
                     txtEnd.Text = eve.EventEndTime;
                 }
-                else {
+                else
+                {
                     Class cls = await new ClassBUS().GetClassByID(id);
 
                     txtID.Text = cls.ClassID;
@@ -195,7 +197,7 @@ namespace AttendanceManagementSystem
 
                 dynamic checkDelete;
 
-                if (state == "Event") 
+                if (state == "Event")
                     checkDelete = await new EventBUS().DeleteEventByID(id);
                 else
                     checkDelete = await new ClassBUS().DeleteClassByID(id);
@@ -203,11 +205,12 @@ namespace AttendanceManagementSystem
                 if (checkDelete)
                 {
                     MessageBox.Show("Xoá thành công");
-                    if(state == "Event")
+                    if (state == "Event")
                     {
                         List<Event> listEvent = await new EventBUS().GetAllEvent();
                         gridEventClass.DataSource = listEvent;
-                    } else
+                    }
+                    else
                     {
                         List<Class> listEvent = await new ClassBUS().GetAllClass();
                         gridEventClass.DataSource = listEvent;
@@ -244,13 +247,13 @@ namespace AttendanceManagementSystem
                 bool result = await new EventBUS().UpdateEvent(newEvent);
                 if (result)
                 {
-                    MessageBox.Show("Thay Đổi Thành Công!!!!!!!!!!!");
+                    MessageBox.Show("Cập nhật sự kiện thành công!");
                     List<Event> listEvent = await new EventBUS().GetAllEvent();
                     gridEventClass.DataSource = listEvent;
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi!!!!!!!!!");
+                    MessageBox.Show("Cập nhật sự kiện thất bại");
                 }
             }
             else
@@ -271,19 +274,19 @@ namespace AttendanceManagementSystem
 
                 if (result)
                 {
-                    MessageBox.Show("Thay Đổi Thành Công!!!!!!!!!!!");
+                    MessageBox.Show("Cập nhật sự kiện thành công!");
                     List<Class> listEvent = await new ClassBUS().GetAllClass();
                     gridEventClass.DataSource = listEvent;
                 }
                 else
-                    MessageBox.Show("Có lỗi!!!!!!!!!");
+                    MessageBox.Show("Cập nhật sự kiện thất bại!");
             }
         }
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
-           string keyWord = txtSearch.Text.Trim();
-            if(state == "Event")
+            string keyWord = txtSearch.Text.Trim();
+            if (state == "Event")
             {
                 List<Event> listEvent = await new EventBUS().SelectByKeyWord(keyWord);
                 gridEventClass.DataSource = listEvent;

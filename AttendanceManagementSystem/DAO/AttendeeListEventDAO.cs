@@ -18,7 +18,7 @@ namespace AttendanceManagementSystem.DAO
             db = FirestoreDb.Create("attendancerfid-a6f84");
         }
 
-        public async ValueTask<List<Att_Eve>> GetListByID(string ID)
+        public async ValueTask<List<Att_Eve>> GetListByID(string eventID)
         {
             List<Att_Eve> list = new List<Att_Eve>();
             Query qref = db.Collection("Att_Eve");
@@ -28,13 +28,13 @@ namespace AttendanceManagementSystem.DAO
             {
                 Att_Eve item = docsnap.ConvertTo<Att_Eve>();
 
-                if (item.EventID == ID)
+                if (item.EventID == eventID)
                     list.Add(item);
             }
             return list;
         }
 
-        public bool AddAttendee(string eventID, string attendeeID)
+        public async Task<bool> AddAttendee(string eventID, string attendeeID)
         {
             CollectionReference coll = db.Collection("Att_Eve");
 
@@ -46,12 +46,39 @@ namespace AttendanceManagementSystem.DAO
 
             try
             {
-                coll.AddAsync(map);
+                await coll.AddAsync(map);
                 return true;
             }
             catch
             {
                 return false;
+            }
+        }
+
+        public async void AddSession(string eventID, string attendeeID, List<Session> sessions)
+        {
+            Query qref = db.Collection("Att_Eve");
+            QuerySnapshot snap = await qref.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Att_Eve item = docsnap.ConvertTo<Att_Eve>();
+
+                if (item.EventID == eventID && item.AttendeeID == attendeeID)
+                {
+                    CollectionReference coll = db.Collection("Att_Eve").Document(docsnap.Id.ToString()).Collection("Sessions");
+
+                    foreach (Session session in sessions)
+                    {
+                        Dictionary<string, string> map = new Dictionary<string, string>()
+                        {
+                            {"Date", session.Date},
+                            {"Time", session.Time},
+                        };
+
+                        await coll.AddAsync(map);
+                    }
+                }
             }
         }
 

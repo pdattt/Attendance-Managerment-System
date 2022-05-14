@@ -187,6 +187,7 @@
     <Compile Include="Model\Class.cs" />
     <Compile Include="Model\Attendee.cs" />
     <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\Session.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Form\RegisterForm.cs">
