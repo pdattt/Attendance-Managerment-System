@@ -11,6 +11,7 @@ namespace AttendanceManagementSystem.BUS
         public string GetRandom(int lenght)
         {
             string letter = "0123456789";
+
             Random r = new Random((int)DateTime.Now.Ticks);
 
             string randomID = "EV";

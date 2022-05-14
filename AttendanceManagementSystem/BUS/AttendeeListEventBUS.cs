@@ -21,7 +21,7 @@ namespace AttendanceManagementSystem.BUS
             { DayOfWeek.Sunday.ToString(), "CN" }
         };
 
-        public ValueTask<Class> Class { get; private set; }
+        public ValueTask<Class> Class { get; set; }
 
         public async Task<List<Attendee>> GetAllAttendeeByEvent(string eventID)
         {

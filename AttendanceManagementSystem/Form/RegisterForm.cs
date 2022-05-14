@@ -14,6 +14,7 @@ using System.Windows.Forms;
 namespace AttendanceManagementSystem
 {
     public partial class RegisterForm : Form
+
     {
         public RegisterForm()
         {

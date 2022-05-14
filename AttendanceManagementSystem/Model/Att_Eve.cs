@@ -16,9 +16,6 @@ namespace AttendanceManagementSystem.Model
         [FirestoreProperty]
         public string AttendeeID { get; set; }
 
-        [FirestoreProperty]
-        public List<Session> Sessions { get; set; }
-
         public Att_Eve()
         { }
 

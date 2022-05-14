@@ -14,7 +14,7 @@ namespace AttendanceManagementSystem
 {
     public partial class AttendeeForm : Form
     {
-        SerialPort Port;
+        private SerialPort Port;
 
         public AttendeeForm()
         {
@@ -78,7 +78,8 @@ namespace AttendanceManagementSystem
         {
             bool checkCardID = await new AttendeeBUS().CheckCardIDExist(txtAttendeeCardID.Text);
 
-            if (checkCardID) {
+            if (checkCardID)
+            {
                 MessageBox.Show("Thẻ đã được sử dụng cho một người dùng khác!");
                 return;
             }
@@ -157,7 +158,7 @@ namespace AttendanceManagementSystem
                 dynamic checkDelete;
 
                 checkDelete = await new AttendeeBUS().DeleteAttendeeByID(id);
-            
+
                 if (checkDelete)
                 {
                     MessageBox.Show("Xoá thành công");
