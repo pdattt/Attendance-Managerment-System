@@ -7,6 +7,13 @@ namespace AttendanceManagementSystem.BUS
 {
     public class AttendeeBUS
     {
+        private readonly AttendeeDAO _data;
+
+        public AttendeeBUS()
+        {
+            _data = new AttendeeDAO();
+        }
+
         public string GetRandom(int lenght)
         {
             string letter = "0123456789";
@@ -20,35 +27,29 @@ namespace AttendanceManagementSystem.BUS
             return randomID;
         }
 
-        public async ValueTask<bool> AddNewAttendee(Attendee attendee)
+        public async Task<List<Attendee>> GetAllAttendee()
         {
-            List<Attendee> listAttendee = await new AttendeeDAO().GetAllAttendee();
-
-            new AttendeeDAO().AddNewAttendee(attendee);
-            return true;
+            return await _data.GetAllAttendee();
         }
 
-        public async ValueTask<List<Attendee>> SelectAll()
+        public bool AddNewAttendee(Attendee attendee)
         {
-            List<Attendee> listAttendee = await new AttendeeDAO().GetAllAttendee();
-            return listAttendee;
+            return _data.AddNewAttendee(attendee);
         }
 
-        public async ValueTask<Attendee> GetDetails(string id)
+        public async Task<Attendee> GetAttendeeByID(string id)
         {
-            Attendee attendee = await new AttendeeDAO().GetByID(id);
-            return attendee;
+            return await _data.GetByID(id);
         }
 
-        public async ValueTask<bool> UpdateAttendee(Attendee newAttendee)
+        public async Task<bool> UpdateAttendee(Attendee newAttendee)
         {
-            bool result = await new AttendeeDAO().UpdateAttendee(newAttendee);
-            return result;
+            return await _data.UpdateAttendee(newAttendee);
         }
 
         public async Task<bool> CheckCardIDExist(string ID)
         {
-            List<Attendee> attendees = await new AttendeeDAO().GetAllAttendee();
+            List<Attendee> attendees = await _data.GetAllAttendee();
 
             foreach (Attendee attendee in attendees)
                 if (attendee.CardID == ID)
@@ -57,9 +58,9 @@ namespace AttendanceManagementSystem.BUS
             return false;
         }
 
-        public Task<bool> DeleteAttendeeByID(string id)
+        public async Task<bool> DeleteAttendeeByID(string id)
         {
-            return new AttendeeDAO().DeleteAttendeeByID(id);
+            return _data.DeleteAttendeeByID(id).Result;
         }
     }
 }

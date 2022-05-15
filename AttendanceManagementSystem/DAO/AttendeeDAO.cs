@@ -50,7 +50,7 @@ namespace DoAnLapTrinhA.DAO
             return null;
         }
 
-        public void AddNewAttendee(Attendee attendee)
+        public bool AddNewAttendee(Attendee attendee)
         {
             CollectionReference coll = db.Collection("Attendee");
 
@@ -63,7 +63,15 @@ namespace DoAnLapTrinhA.DAO
                 {"Role", attendee.Role}
             };
 
-            coll.AddAsync(map);
+            try
+            {
+                coll.AddAsync(map);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public async ValueTask<bool> UpdateAttendee(Attendee newAttendee)
