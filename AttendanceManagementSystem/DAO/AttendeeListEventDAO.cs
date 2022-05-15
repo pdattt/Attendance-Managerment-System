@@ -37,6 +37,15 @@ namespace AttendanceManagementSystem.DAO
         public async Task<bool> AddAttendee(string eventID, string attendeeID)
         {
             CollectionReference coll = db.Collection("Att_Eve");
+            QuerySnapshot snap = await coll.GetSnapshotAsync();
+
+            foreach (DocumentSnapshot docsnap in snap)
+            {
+                Att_Eve item = docsnap.ConvertTo<Att_Eve>();
+
+                if (attendeeID == item.AttendeeID)
+                    return false;
+            }
 
             Dictionary<string, object> map = new Dictionary<string, object>()
             {

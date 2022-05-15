@@ -72,15 +72,15 @@ namespace AttendanceManagementSystem
 
         private void btnImport_Click(object sender, EventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog(); //open dialog to choose file
-            if (file.ShowDialog() == DialogResult.OK) //if there is a file chosen by the user
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
             {
-                string fileExt = Path.GetExtension(file.FileName); //get the file extension
+                string fileExt = Path.GetExtension(file.FileName);
                 if (fileExt.CompareTo(".xls") == 0 || fileExt.CompareTo(".xlsx") == 0)
                 {
                     try
                     {
-                        DataTable dtExcel = ReadExcel(file.FileName); //read excel file
+                        DataTable dtExcel = ReadExcel(file.FileName);
                         List<Attendee> attendeeToImport = dtExcel.AsEnumerable().Select(row =>
                             new Attendee
                             {
@@ -110,13 +110,11 @@ namespace AttendanceManagementSystem
         private DataTable ReadExcel(string fileName)
         {
             WorkBook workbook = WorkBook.Load(fileName);
-            //// Work with a single WorkSheet.
-            ////you can pass static sheet name like Sheet1 to get that sheet
             ////WorkSheet sheet = workbook.GetWorkSheet("Sheet1");
-            //You can also use workbook.DefaultWorkSheet to get default in case you want to get first sheet only
+            ////Defaut Sheet: Sheet 1
+
             WorkSheet sheet = workbook.DefaultWorkSheet;
-            //Convert the worksheet to System.Data.DataTable
-            //Boolean parameter sets the first row as column names of your table.
+
             return sheet.ToDataTable(true);
         }
     }

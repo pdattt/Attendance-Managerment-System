@@ -18,6 +18,7 @@ namespace AttendanceManagementSystem
             InitializeComponent();
             eventID = ID;
 
+            availableAttendees = new List<Attendee>();
             attendeesToJoin = new List<Attendee>();
         }
 
@@ -26,7 +27,7 @@ namespace AttendanceManagementSystem
             InitializeComponent();
             eventID = ID;
 
-            attendeesToJoin = new List<Attendee>();
+            availableAttendees = new List<Attendee>();
             attendeesToJoin = attendeeToImport;
         }
 
@@ -34,14 +35,22 @@ namespace AttendanceManagementSystem
         {
             availableAttendees = await new AttendeeListEventBUS().GetAvailableAttendee(eventID);
 
+            if (attendeesToJoin != null)
+            {
+                foreach (Attendee attendee in attendeesToJoin)
+                {
+                    Attendee checkExistAttendee = await new AttendeeBUS().GetAttendeeByID(attendee.AttendeeID);
+
+                    if (checkExistAttendee != null && availableAttendees.Contains(checkExistAttendee))
+                        availableAttendees.Remove(attendee);
+                }
+
+                listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
+            }
+
             if (availableAttendees != null)
             {
                 listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
-            }
-
-            if (attendeesToJoin != null)
-            {
-                listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
             }
         }
 
@@ -54,7 +63,7 @@ namespace AttendanceManagementSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (availableAttendees.Count > 0)
+            if (availableAttendees != null || availableAttendees.Count > 0)
             {
                 string attendeeItem = listAvailableAttendee.SelectedItems[0].ToString();
 
@@ -68,6 +77,8 @@ namespace AttendanceManagementSystem
                 listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
                 listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
             }
+            else
+                return;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
@@ -90,16 +101,19 @@ namespace AttendanceManagementSystem
 
         private async void btnApply_Click(object sender, EventArgs e)
         {
-            bool addCheck = await new AttendeeListEventBUS().AddAttendeeToEvent(eventID, attendeesToJoin);
-
-            if (addCheck)
+            foreach (Attendee attendee in attendeesToJoin)
             {
-                MessageBox.Show("Thêm thành công!");
-                attendeesToJoin = null;
-                listAttendeeToJoin.DataSource = attendeesToJoin;
+                Attendee checkExistAttendee = await new AttendeeBUS().GetAttendeeByID(attendee.AttendeeID);
+
+                if (checkExistAttendee == null)
+                    new AttendeeBUS().AddNewAttendee(attendee);
             }
-            else
-                MessageBox.Show("Thêm thất bại!");
+
+            new AttendeeListEventBUS().AddAttendeeToEvent(eventID, attendeesToJoin);
+
+            MessageBox.Show("Thêm người tham dự thành công!");
+            attendeesToJoin = null;
+            listAttendeeToJoin.DataSource = attendeesToJoin;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

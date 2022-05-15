@@ -12,11 +12,6 @@ namespace AttendanceManagementSystem.BUS
     {
         private readonly AttendeeListEventDAO _data;
 
-        public AttendeeListEventBUS()
-        {
-            _data = new AttendeeListEventDAO();
-        }
-
         private Dictionary<string, string> dayOfWeek = new Dictionary<string, string>
         {
             { DayOfWeek.Monday.ToString(), "2" },
@@ -28,7 +23,10 @@ namespace AttendanceManagementSystem.BUS
             { DayOfWeek.Sunday.ToString(), "CN" }
         };
 
-        public ValueTask<Class> Class { get; set; }
+        public AttendeeListEventBUS()
+        {
+            _data = new AttendeeListEventDAO();
+        }
 
         public async Task<List<Attendee>> GetAllAttendeeByEvent(string eventID)
         {
@@ -63,7 +61,7 @@ namespace AttendanceManagementSystem.BUS
             return availableAttendees;
         }
 
-        public async Task<bool> AddAttendeeToEvent(string eventID, List<Attendee> attendees)
+        public async void AddAttendeeToEvent(string eventID, List<Attendee> attendees)
         {
             foreach (Attendee attendee in attendees)
             {
@@ -72,12 +70,10 @@ namespace AttendanceManagementSystem.BUS
                 bool addCheck = await _data.AddAttendee(eventID, attendee.AttendeeID);
 
                 if (!addCheck)
-                    return false;
+                    continue;
 
                 _data.AddSession(eventID, attendee.AttendeeID, sessions);
             }
-
-            return true;
         }
 
         public async Task<bool> DeleteAttendeeFromEvent(string eventID, string attendeeID)
