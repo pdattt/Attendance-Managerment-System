@@ -1,4 +1,5 @@
-﻿using DoAnLapTrinhA.DAO;
+﻿using AttendanceManagementSystem.DAO;
+using DoAnLapTrinhA.DAO;
 using System;
 using System.Collections.Generic;
 using System.Data;

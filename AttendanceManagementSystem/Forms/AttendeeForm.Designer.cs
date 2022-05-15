@@ -67,7 +67,7 @@
             this.colCardID,
             this.colRole});
             this.gridAttendee.Location = new System.Drawing.Point(225, 100);
-            this.gridAttendee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridAttendee.Margin = new System.Windows.Forms.Padding(4);
             this.gridAttendee.Name = "gridAttendee";
             this.gridAttendee.RowHeadersWidth = 51;
             this.gridAttendee.Size = new System.Drawing.Size(1325, 348);
@@ -167,7 +167,7 @@
             // txtAttendeeID
             // 
             this.txtAttendeeID.Location = new System.Drawing.Point(225, 46);
-            this.txtAttendeeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAttendeeID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttendeeID.Name = "txtAttendeeID";
             this.txtAttendeeID.Size = new System.Drawing.Size(328, 22);
             this.txtAttendeeID.TabIndex = 6;
@@ -175,7 +175,7 @@
             // txtAttendeeName
             // 
             this.txtAttendeeName.Location = new System.Drawing.Point(225, 91);
-            this.txtAttendeeName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAttendeeName.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttendeeName.Name = "txtAttendeeName";
             this.txtAttendeeName.Size = new System.Drawing.Size(328, 22);
             this.txtAttendeeName.TabIndex = 7;
@@ -183,7 +183,7 @@
             // txtAttendeeEmail
             // 
             this.txtAttendeeEmail.Location = new System.Drawing.Point(225, 137);
-            this.txtAttendeeEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAttendeeEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttendeeEmail.Name = "txtAttendeeEmail";
             this.txtAttendeeEmail.Size = new System.Drawing.Size(328, 22);
             this.txtAttendeeEmail.TabIndex = 8;
@@ -191,7 +191,7 @@
             // txtAttendeeCardID
             // 
             this.txtAttendeeCardID.Location = new System.Drawing.Point(225, 187);
-            this.txtAttendeeCardID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAttendeeCardID.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttendeeCardID.Name = "txtAttendeeCardID";
             this.txtAttendeeCardID.Size = new System.Drawing.Size(328, 22);
             this.txtAttendeeCardID.TabIndex = 9;
@@ -199,7 +199,7 @@
             // txtAttendeeRole
             // 
             this.txtAttendeeRole.Location = new System.Drawing.Point(225, 234);
-            this.txtAttendeeRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAttendeeRole.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttendeeRole.Name = "txtAttendeeRole";
             this.txtAttendeeRole.Size = new System.Drawing.Size(328, 22);
             this.txtAttendeeRole.TabIndex = 10;
@@ -207,7 +207,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(1341, 556);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 94);
             this.btnAdd.TabIndex = 11;
@@ -218,7 +218,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(1449, 555);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 28);
             this.btnUpdate.TabIndex = 12;
@@ -229,7 +229,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(1449, 588);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
             this.btnDelete.TabIndex = 13;
@@ -241,7 +241,7 @@
             // 
             this.gridCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCalendar.Location = new System.Drawing.Point(225, 468);
-            this.gridCalendar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridCalendar.Margin = new System.Windows.Forms.Padding(4);
             this.gridCalendar.Name = "gridCalendar";
             this.gridCalendar.RowHeadersWidth = 51;
             this.gridCalendar.Size = new System.Drawing.Size(501, 304);
@@ -261,7 +261,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(37, 33);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(100, 28);
             this.btnBack.TabIndex = 16;
@@ -272,7 +272,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(1449, 622);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(100, 28);
             this.btnRefresh.TabIndex = 17;
@@ -293,9 +293,9 @@
             this.groupBox1.Controls.Add(this.txtAttendeeRole);
             this.groupBox1.Controls.Add(this.txtAttendeeCardID);
             this.groupBox1.Location = new System.Drawing.Point(735, 455);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(599, 316);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
@@ -315,10 +315,11 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.gridAttendee);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AttendeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AttendeeForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AttendeeForm_FormClosed);
             this.Load += new System.EventHandler(this.AttendeeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCalendar)).EndInit();

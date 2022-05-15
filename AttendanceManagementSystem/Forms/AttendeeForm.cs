@@ -63,7 +63,7 @@ namespace AttendanceManagementSystem
         private void btnBack_Click(object sender, EventArgs e)
         {
             MainForm frm = new MainForm();
-            this.Hide();
+            this.Close();
             frm.Show();
         }
 
@@ -170,6 +170,11 @@ namespace AttendanceManagementSystem
             }
 
             MessageBox.Show("Xóa người tham dự thất bại!");
+        }
+
+        private void AttendeeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Port.Close();
         }
     }
 }
