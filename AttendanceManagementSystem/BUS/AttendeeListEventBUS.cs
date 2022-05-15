@@ -10,6 +10,13 @@ namespace AttendanceManagementSystem.BUS
 {
     public class AttendeeListEventBUS
     {
+        private readonly AttendeeListEventDAO _data;
+
+        public AttendeeListEventBUS()
+        {
+            _data = new AttendeeListEventDAO();
+        }
+
         private Dictionary<string, string> dayOfWeek = new Dictionary<string, string>
         {
             { DayOfWeek.Monday.ToString(), "2" },
@@ -25,7 +32,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async Task<List<Attendee>> GetAllAttendeeByEvent(string eventID)
         {
-            List<Att_Eve> list = await new AttendeeListEventDAO().GetListByID(eventID);
+            List<Att_Eve> list = await _data.GetListByID(eventID);
             List<Attendee> attendees = new List<Attendee>();
 
             foreach (Att_Eve item in list)
@@ -39,7 +46,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async Task<List<Attendee>> GetAvailableAttendee(string eventID)
         {
-            List<Att_Eve> list = await new AttendeeListEventDAO().GetListByID(eventID);
+            List<Att_Eve> list = await _data.GetListByID(eventID);
             List<Attendee> attendees = await new AttendeeDAO().GetAllAttendee();
 
             List<Attendee> availableAttendees = new List<Attendee>();
@@ -62,12 +69,12 @@ namespace AttendanceManagementSystem.BUS
             {
                 List<Session> sessions = await GenerateAttendanceSession(eventID, attendee.AttendeeID);
 
-                bool addCheck = await new AttendeeListEventDAO().AddAttendee(eventID, attendee.AttendeeID);
+                bool addCheck = await _data.AddAttendee(eventID, attendee.AttendeeID);
 
                 if (!addCheck)
                     return false;
 
-                new AttendeeListEventDAO().AddSession(eventID, attendee.AttendeeID, sessions);
+                _data.AddSession(eventID, attendee.AttendeeID, sessions);
             }
 
             return true;
@@ -75,7 +82,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async Task<bool> DeleteAttendeeFromEvent(string eventID, string attendeeID)
         {
-            bool deleteCheck = await new AttendeeListEventDAO().DeleteAttendeeFromEvent(eventID, attendeeID);
+            bool deleteCheck = await _data.DeleteAttendeeFromEvent(eventID, attendeeID);
 
             if (deleteCheck)
                 return true;

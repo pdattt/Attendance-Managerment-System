@@ -345,3 +345,5 @@ C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagem
 C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AttendeeListInEvent.resources
 C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AddAttendeeToEvent.resources
 C:\Đồ Án Lập Trình\Attendance Manage System\AttendanceManagementSystem\obj\Debug\AttendanceManagementSystem.AttendeeListInEvent.resources
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\IronXL.dll
+C:\Users\datng\OneDrive\Desktop\AMS\AttendanceManagementSystem\AttendanceManagementSystem\bin\Debug\IronXL.xml

@@ -21,6 +21,15 @@ namespace AttendanceManagementSystem
             attendeesToJoin = new List<Attendee>();
         }
 
+        public AddAttendeeToEvent(string ID, List<Attendee> attendeeToImport)
+        {
+            InitializeComponent();
+            eventID = ID;
+
+            attendeesToJoin = new List<Attendee>();
+            attendeesToJoin = attendeeToImport;
+        }
+
         private async void AddAttendeeToEvent_Load(object sender, EventArgs e)
         {
             availableAttendees = await new AttendeeListEventBUS().GetAvailableAttendee(eventID);
@@ -28,6 +37,11 @@ namespace AttendanceManagementSystem
             if (availableAttendees != null)
             {
                 listAvailableAttendee.DataSource = availableAttendees.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
+            }
+
+            if (attendeesToJoin != null)
+            {
+                listAttendeeToJoin.DataSource = attendeesToJoin.Select(x => x.AttendeeID + "\t\t" + x.Name + "\t" + x.Email).ToList();
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using DoAnLapTrinhA.DAO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace AttendanceManagementSystem.BUS
@@ -60,7 +61,7 @@ namespace AttendanceManagementSystem.BUS
 
         public async Task<bool> DeleteAttendeeByID(string id)
         {
-            return _data.DeleteAttendeeByID(id).Result;
+            return await _data.DeleteAttendeeByID(id);
         }
     }
 }

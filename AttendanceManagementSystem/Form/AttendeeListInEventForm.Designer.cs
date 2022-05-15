@@ -33,6 +33,7 @@ namespace AttendanceManagementSystem
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@ namespace AttendanceManagementSystem
             this.gridAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridAttendance.Location = new System.Drawing.Point(12, 84);
             this.gridAttendance.Name = "gridAttendance";
+            this.gridAttendance.ReadOnly = true;
             this.gridAttendance.RowHeadersWidth = 51;
             this.gridAttendance.RowTemplate.Height = 24;
             this.gridAttendance.Size = new System.Drawing.Size(758, 311);
@@ -48,7 +50,7 @@ namespace AttendanceManagementSystem
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(824, 138);
+            this.btnAdd.Location = new System.Drawing.Point(824, 84);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(138, 67);
             this.btnAdd.TabIndex = 1;
@@ -58,7 +60,7 @@ namespace AttendanceManagementSystem
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(824, 270);
+            this.btnDelete.Location = new System.Drawing.Point(824, 328);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(138, 67);
             this.btnDelete.TabIndex = 2;
@@ -76,11 +78,22 @@ namespace AttendanceManagementSystem
             this.Title.TabIndex = 3;
             this.Title.Text = "Danh sách người tham gia";
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(824, 201);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(138, 67);
+            this.btnImport.TabIndex = 4;
+            this.btnImport.Text = "Thêm từ file excel";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // AttendeeListInEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 450);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -101,5 +114,6 @@ namespace AttendanceManagementSystem
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Button btnImport;
     }
 }
