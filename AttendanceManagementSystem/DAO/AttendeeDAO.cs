@@ -44,6 +44,7 @@ namespace DoAnLapTrinhA.DAO
                 Attendee attendee = docsnap.ConvertTo<Attendee>();
                 if (attendee.AttendeeID == id)
                 {
+                    //
                     return attendee;
                 }
             }
